@@ -96,7 +96,10 @@
         {% elif pokemon.type_idx2 == 15 %} <td class='subbox bdragon'>
         {% elif pokemon.type_idx2 == 16 %} <td class='subbox bdice'>
         {% endif %}
-          {% for t in pokemon.types.all %}<strong>{{t}}</strong>{% if not forloop.last %}, {% endif %}{% endfor %}</td>
+          {% for t in pokemon.types.all %}
+            <strong>{{t}}</strong>{% if not forloop.last %}, {% endif %}
+          {% endfor %}
+        </td>
       </tr>
     </table>
   </td>
@@ -106,8 +109,11 @@
 
 <h2>Summary</h2>
 <p>{{pokemon.summary}}</p>
+<h2>Region</h2>
+<p>{{pokemon.region}}</p>
 <h2>Weakness</h2>
 <p>{% for t in pokemon.weakness.all %} {{t}} {% if not forloop.last %}, {% endif %}{% endfor %}</p>
+
 <h2>Evolution Chain</h2>
 
 <div>
