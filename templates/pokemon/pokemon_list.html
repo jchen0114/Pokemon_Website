@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %} Pokémon of the Year {% endblock %}
+{% block content %}
+<head>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/pokemon_list.css' %}">
+</head>
+<body>
+<h1 id='title'> Pokémon of the Year </h1>
+
+<table style="width:100%" align="center">
+  <tr>
+    <td align="center"><strong>Ranking</strong></th> 
+    <td align="center"><strong>Pokémon</strong></th> 
+  </tr>
+  {% for pp in object_list %}
+  <tr>
+    <td align="center"><font size='10'><strong>{{pp.rank}}</strong></font></td>
+    <td align="center" class="img"><a href="{% url 'pokemons:pokemon_id' pp.pk %}">
+      <img src="{{pp.image.url}}" width="256" height="256" title='{{pp.pokemon_name}}'></a></td>
+    <td><font size='5'><strong>{{pp.pokemon_name}}</strong></font></td>
+  </tr>
+  {% endfor %}
+</table>
+<p></p>
+
+</body>
+{% endblock content %}

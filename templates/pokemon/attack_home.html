@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %} Attack List {% endblock %}
+{% block content %}
+<h1 align='center'> Attack List</h1>
+{% for aa in attack_list %}
+ <div class="">
+   <h3><a href="{% url 'pokemons:attack_id' aa.pk %}">{{ aa.attack_name }}</a></h3>
+   <p>{% for t in attack.types.all %} {{ t }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+ </div>
+{% endfor %}
+{% endblock content %}

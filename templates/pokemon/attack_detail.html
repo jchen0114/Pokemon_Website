@@ -1,0 +1,13 @@
+{% extends "base.html"%}
+{% block title %} {{attack.attack_name}} {% endblock %}
+<head>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+{% block content%}
+<h1 align='center'> {{attack.attack_name}} </h1>
+<ul>
+  <li> Damage: {{attack.damage}}</li>
+  <li> Types : {% for t in attack.types.all %} {{ t }}{% if not forloop.last %}, {% endif %}{% endfor %}</li>
+</ul>
+{% endblock %}

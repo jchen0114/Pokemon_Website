@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %} Movies {% endblock %}
+{% block content %}
+<head>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/movie_list.css' %}">
+</head>
+<body>
+<h1 id='title'> Movies </h1>
+<table style="width:100%" align="center">
+  <tr>
+    {% for mm in object_list %}
+    {% if mm.title == 'Mewtwo Strikes Back' or mm.title == 'The Power of One' or mm.title == 'Spell of the Unown'%}
+    <td align="center" class="zoom img"><a href="{% url 'pokemons:movie_id' mm.pk %}">
+      <img src="{{mm.image.url}}" class='img' width="200" ></a></td>
+    {% endif %}
+    {% endfor %}
+  </tr>
+  <tr>
+    {% for mm in object_list %}
+    {% if mm.title == 'Mewtwo Strikes Back' or mm.title == 'The Power of One' or mm.title == 'Spell of the Unown'%}
+    <td align="center"><font size='4'>{{mm.title}}</font></td>
+    {% endif %}
+    {% endfor %}
+  </tr>
+</table>
+
+<!-- <li> Types : {% for t in pokemon.types.all %} {{ t }}{% if not forloop.last %}, {% endif %}{% endfor %}</li> -->
+
+<p></p>
+</body>
+{% endblock content %}

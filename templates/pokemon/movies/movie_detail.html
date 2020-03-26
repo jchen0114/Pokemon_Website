@@ -1,0 +1,31 @@
+{% extends "base.html"%}
+{% block title %} {{movie.title}} {% endblock %}
+{% block content%}
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/movie_detail.css' %}">
+    <link rel="Shortcut Icon" href="media/images/pokeball.png" type="image/x-icon">
+</head>
+<body>
+<h1 id='title'>{{movie.title}}</h1>
+<hr>
+
+<h2>Summary</h2>
+<p class='summary'><img src={{movie.image.url}} class='img'> {{movie.summary}} </p>
+
+<h2 class='dist'> Featured Pokémon </h2>
+
+<table>
+  <tr>
+    {% for mm in movie.pokemon.all %}
+      <td><a href="{% url 'pokemons:pokemon_id' mm.pk %}"><img src={{ mm.image.url }} width="200" height="230" class='pkimg'></a></td>
+    {% endfor %}
+  </tr>
+  <tr>
+    {% for mm in movie.pokemon.all %}
+      <td align="center"><font size='5'>{{mm.pokemon_name}}</font></td>
+    {% endfor %}
+  </tr>
+</table>
+</body>
+{% endblock %}

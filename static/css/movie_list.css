@@ -1,0 +1,20 @@
+#title {
+    text-align: center;
+    margin-top: 0.5cm;
+    font-size: 50px;
+}
+
+.img {
+    max-width: 50%;
+    height: auto;
+    background-size: cover;
+}
+
+.zoom {
+    padding: 20px 0 25px 0;
+    transition: transform .2s;
+}
+  
+.zoom:hover {
+    transform: scale(1.2); 
+}
