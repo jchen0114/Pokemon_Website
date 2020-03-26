@@ -17,22 +17,22 @@
 <h1 align='center' id='title'> {{pokemon.pokemon_name}} </h1>
 <hr>
 
-{% if pokemon.type_idx == 1 %} <table align="right" class='bgnormal maintable'>
-{% elif pokemon.type_idx == 2 %} <table align="right" class='bgground maintable'>
-{% elif pokemon.type_idx == 3 %} <table align="right" class='bgdark maintable'>
-{% elif pokemon.type_idx == 4 %} <table align="right" class='bgfairy maintable'>
-{% elif pokemon.type_idx == 5 %} <table align="right" class='bgpsychic maintable'>
-{% elif pokemon.type_idx == 6 %} <table align="right" class='bgghost maintable'>
-{% elif pokemon.type_idx == 7 %} <table align="right" class='bgfire maintable'>
-{% elif pokemon.type_idx == 8 %} <table align="right" class='bgpoison maintable'>
-{% elif pokemon.type_idx == 9 %} <table align="right" class='bggrass maintable'>
-{% elif pokemon.type_idx == 10 %} <table align="right" class='bgelectric maintable'>
-{% elif pokemon.type_idx == 11 %} <table align="right" class='bgsteel maintable'>
-{% elif pokemon.type_idx == 12 %} <table align="right" class='bgwater maintable'>
-{% elif pokemon.type_idx == 13 %} <table align="right" class='bgfighting maintable'>
-{% elif pokemon.type_idx == 14 %} <table align="right" class='bgflying maintable'>
-{% elif pokemon.type_idx == 15 %} <table align="right" class='bgdragon maintable'>
-{% elif pokemon.type_idx == 16 %} <table align="right" class='bgice maintable'>
+{% if pokemon.type_idx == 3 %} <table align="right" class='bgnormal maintable'>
+{% elif pokemon.type_idx == 4 %} <table align="right" class='bgground maintable'>
+{% elif pokemon.type_idx == 5 %} <table align="right" class='bgdark maintable'>
+{% elif pokemon.type_idx == 6 %} <table align="right" class='bgfairy maintable'>
+{% elif pokemon.type_idx == 7 %} <table align="right" class='bgpsychic maintable'>
+{% elif pokemon.type_idx == 8 %} <table align="right" class='bgghost maintable'>
+{% elif pokemon.type_idx == 9 %} <table align="right" class='bgfire maintable'>
+{% elif pokemon.type_idx == 10 %} <table align="right" class='bgpoison maintable'>
+{% elif pokemon.type_idx == 11 %} <table align="right" class='bggrass maintable'>
+{% elif pokemon.type_idx == 12 %} <table align="right" class='bgelectric maintable'>
+{% elif pokemon.type_idx == 13 %} <table align="right" class='bgsteel maintable'>
+{% elif pokemon.type_idx == 14 %} <table align="right" class='bgwater maintable'>
+{% elif pokemon.type_idx == 15 %} <table align="right" class='bgfighting maintable'>
+{% elif pokemon.type_idx == 16 %} <table align="right" class='bgflying maintable'>
+{% elif pokemon.type_idx == 17 %} <table align="right" class='bgdragon maintable'>
+{% elif pokemon.type_idx == 18 %} <table align="right" class='bgice maintable'>
 {% endif %}
 
 <tr>
@@ -43,58 +43,58 @@
   <td colspan="2" class="bgname"><img src={{pokemon.image.url}} width="256" height="256" class='img'></td>
 </tr>
 <tr>
-  {% if pokemon.type_idx == 1 %} <td colspan="2" class="bgtype subbgnormal">
-  {% elif pokemon.type_idx == 2 %} <td colspan="2" class="bgtype subbgground">
-  {% elif pokemon.type_idx == 3 %} <td colspan="2" class="bgtype subbgdark">
-  {% elif pokemon.type_idx == 4 %} <td colspan="2" class="bgtype subbgfairy">
-  {% elif pokemon.type_idx == 5 %} <td colspan="2" class="bgtype subbgpsychic">
-  {% elif pokemon.type_idx == 6 %} <td colspan="2" class="bgtype subbgghost">
-  {% elif pokemon.type_idx == 7 %} <td colspan="2" class="bgtype subbgfire">
-  {% elif pokemon.type_idx == 8 %} <td colspan="2" class="bgtype subbgpoison">
-  {% elif pokemon.type_idx == 9 %} <td colspan="2" class="bgtype subbggrass">
-  {% elif pokemon.type_idx == 10 %} <td colspan="2" class="bgtype subbgelectric">
-  {% elif pokemon.type_idx == 11 %} <td colspan="2" class="bgtype subbgsteel">
-  {% elif pokemon.type_idx == 12 %} <td colspan="2" class="bgtype subbgwater">
-  {% elif pokemon.type_idx == 13 %} <td colspan="2" class="bgtype subbgfighting">
-  {% elif pokemon.type_idx == 14 %} <td colspan="2" class="bgtype subbgflying">
-  {% elif pokemon.type_idx == 15 %} <td colspan="2" class="bgtype subbgdragon">
-  {% elif pokemon.type_idx == 16 %} <td colspan="2" class="bgtype subbgice">
+  {% if pokemon.type_idx == 3 %} <td colspan="2" class="bgtype subbgnormal">
+  {% elif pokemon.type_idx == 4 %} <td colspan="2" class="bgtype subbgground">
+  {% elif pokemon.type_idx == 5 %} <td colspan="2" class="bgtype subbgdark">
+  {% elif pokemon.type_idx == 6 %} <td colspan="2" class="bgtype subbgfairy">
+  {% elif pokemon.type_idx == 7 %} <td colspan="2" class="bgtype subbgpsychic">
+  {% elif pokemon.type_idx == 8 %} <td colspan="2" class="bgtype subbgghost">
+  {% elif pokemon.type_idx == 9 %} <td colspan="2" class="bgtype subbgfire">
+  {% elif pokemon.type_idx == 10 %} <td colspan="2" class="bgtype subbgpoison">
+  {% elif pokemon.type_idx == 11 %} <td colspan="2" class="bgtype subbggrass">
+  {% elif pokemon.type_idx == 12 %} <td colspan="2" class="bgtype subbgelectric">
+  {% elif pokemon.type_idx == 13 %} <td colspan="2" class="bgtype subbgsteel">
+  {% elif pokemon.type_idx == 14 %} <td colspan="2" class="bgtype subbgwater">
+  {% elif pokemon.type_idx == 15 %} <td colspan="2" class="bgtype subbgfighting">
+  {% elif pokemon.type_idx == 16 %} <td colspan="2" class="bgtype subbgflying">
+  {% elif pokemon.type_idx == 17 %} <td colspan="2" class="bgtype subbgdragon">
+  {% elif pokemon.type_idx == 18 %} <td colspan="2" class="bgtype subbgice">
   {% endif %}
   <strong>Type</strong>
-    {% if pokemon.type_idx2 == 1 %} <table class='subbox bnormal'>
-    {% elif pokemon.type_idx2 == 2 %} <table class='subbox bground'>
-    {% elif pokemon.type_idx2 == 3 %} <table class='subbox bdark'>
-    {% elif pokemon.type_idx2 == 4 %} <table class='subbox bfairy'>
-    {% elif pokemon.type_idx2 == 5 %} <table class='subbox bpsychic'>
-    {% elif pokemon.type_idx2 == 6 %} <table class='subbox bghost'>
-    {% elif pokemon.type_idx2 == 7 %} <table class='subbox bfire'>
-    {% elif pokemon.type_idx2 == 8 %} <table class='subbox bpoison'>
-    {% elif pokemon.type_idx2 == 9 %} <table class='subbox bgrass'>
-    {% elif pokemon.type_idx2 == 10 %} <table class='subbox belectric'>
-    {% elif pokemon.type_idx2 == 11 %} <table class='subbox bsteel'>
-    {% elif pokemon.type_idx2 == 12 %} <table class='subbox bwater'>
-    {% elif pokemon.type_idx2 == 13 %} <table class='subbox bfighting'>
-    {% elif pokemon.type_idx2 == 14 %} <table class='subbox bflying'>
-    {% elif pokemon.type_idx2 == 15 %} <table class='subbox bdragon'>
-    {% elif pokemon.type_idx2 == 16 %} <table class='subbox bdice'>
+    {% if pokemon.type_idx2 == 3 %} <table class='subbox bnormal'>
+    {% elif pokemon.type_idx2 == 4 %} <table class='subbox bground'>
+    {% elif pokemon.type_idx2 == 5 %} <table class='subbox bdark'>
+    {% elif pokemon.type_idx2 == 6 %} <table class='subbox bfairy'>
+    {% elif pokemon.type_idx2 == 7 %} <table class='subbox bpsychic'>
+    {% elif pokemon.type_idx2 == 8 %} <table class='subbox bghost'>
+    {% elif pokemon.type_idx2 == 9 %} <table class='subbox bfire'>
+    {% elif pokemon.type_idx2 == 10 %} <table class='subbox bpoison'>
+    {% elif pokemon.type_idx2 == 11 %} <table class='subbox bgrass'>
+    {% elif pokemon.type_idx2 == 12 %} <table class='subbox belectric'>
+    {% elif pokemon.type_idx2 == 13 %} <table class='subbox bsteel'>
+    {% elif pokemon.type_idx2 == 14 %} <table class='subbox bwater'>
+    {% elif pokemon.type_idx2 == 15 %} <table class='subbox bfighting'>
+    {% elif pokemon.type_idx2 == 16 %} <table class='subbox bflying'>
+    {% elif pokemon.type_idx2 == 17 %} <table class='subbox bdragon'>
+    {% elif pokemon.type_idx2 == 18 %} <table class='subbox bdice'>
     {% endif %}
       <tr>
-        {% if pokemon.type_idx2 == 1 %} <td class='subbox bnormal'>
-        {% elif pokemon.type_idx2 == 2 %} <td class='subbox bground'>
-        {% elif pokemon.type_idx2 == 3 %} <td class='subbox bdark'>
-        {% elif pokemon.type_idx2 == 4 %} <td class='subbox bfairy'>
-        {% elif pokemon.type_idx2 == 5 %} <td class='subbox bpsychic'>
-        {% elif pokemon.type_idx2 == 6 %} <td class='subbox bghost'>
-        {% elif pokemon.type_idx2 == 7 %} <td class='subbox bfire'>
-        {% elif pokemon.type_idx2 == 8 %} <td class='subbox bpoison'>
-        {% elif pokemon.type_idx2 == 9 %} <td class='subbox bgrass'>
-        {% elif pokemon.type_idx2 == 10 %} <td class='subbox belectric'>
-        {% elif pokemon.type_idx2 == 11 %} <td class='subbox bsteel'>
-        {% elif pokemon.type_idx2 == 12 %} <td class='subbox bwater'>
-        {% elif pokemon.type_idx2 == 13 %} <td class='subbox bfighting'>
-        {% elif pokemon.type_idx2 == 14 %} <td class='subbox bflying'>
-        {% elif pokemon.type_idx2 == 15 %} <td class='subbox bdragon'>
-        {% elif pokemon.type_idx2 == 16 %} <td class='subbox bdice'>
+        {% if pokemon.type_idx2 == 3 %} <td class='subbox bnormal'>
+        {% elif pokemon.type_idx2 == 4 %} <td class='subbox bground'>
+        {% elif pokemon.type_idx2 == 5 %} <td class='subbox bdark'>
+        {% elif pokemon.type_idx2 == 6 %} <td class='subbox bfairy'>
+        {% elif pokemon.type_idx2 == 7 %} <td class='subbox bpsychic'>
+        {% elif pokemon.type_idx2 == 8 %} <td class='subbox bghost'>
+        {% elif pokemon.type_idx2 == 9 %} <td class='subbox bfire'>
+        {% elif pokemon.type_idx2 == 10 %} <td class='subbox bpoison'>
+        {% elif pokemon.type_idx2 == 11 %} <td class='subbox bgrass'>
+        {% elif pokemon.type_idx2 == 12 %} <td class='subbox belectric'>
+        {% elif pokemon.type_idx2 == 13 %} <td class='subbox bsteel'>
+        {% elif pokemon.type_idx2 == 14 %} <td class='subbox bwater'>
+        {% elif pokemon.type_idx2 == 15 %} <td class='subbox bfighting'>
+        {% elif pokemon.type_idx2 == 16 %} <td class='subbox bflying'>
+        {% elif pokemon.type_idx2 == 17 %} <td class='subbox bdragon'>
+        {% elif pokemon.type_idx2 == 18 %} <td class='subbox bdice'>
         {% endif %}
           {% for t in pokemon.types.all %}
             <strong>{{t}}</strong>{% if not forloop.last %}, {% endif %}
