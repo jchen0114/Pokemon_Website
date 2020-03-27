@@ -80,12 +80,22 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'djongo',
+        'NAME': 'jc',
+        'HOST': 'mongodb+srv://jc0114:taipei101@cluster0-fbssl.mongodb.net/test?retryWrites=true&w=majority',
+        'USER': 'jc0114',
+        'PASSWORD': 'taipei101',
+
+        }
     }
-}
 
 
 # Password validation
