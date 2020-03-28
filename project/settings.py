@@ -89,7 +89,7 @@ WSGI_APPLICATION = 'project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'jc',
+        'NAME': 'pokemon',
         'HOST': 'mongodb+srv://jc0114:taipei101@cluster0-fbssl.mongodb.net/test?retryWrites=true&w=majority',
         'USER': 'jc0114',
         'PASSWORD': 'taipei101',
