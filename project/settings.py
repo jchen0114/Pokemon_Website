@@ -90,7 +90,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'djongo',
         'NAME': 'pokemon',
-        'HOST': 'mongodb+srv://jc0114:taipei101@cluster0-fbssl.mongodb.net/test?retryWrites=true&w=majority',
+        'HOST': 'mongodb+srv://jc0114:taipei101@cluster0-fbssl.mongodb.net/test?retryWrites=true',
         'USER': 'jc0114',
         'PASSWORD': 'taipei101',
 
