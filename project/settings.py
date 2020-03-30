@@ -86,9 +86,6 @@ WSGI_APPLICATION = 'project.wsgi.application'
 #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
-from mongoify import mongoify
-from pymongo import MongoClient
-db = MongoClient(mongoify(default='mongodb+srv://jc0114:taipei101@cluster0-xb9zh.mongodb.net/test?retryWrites=true&w=majority')['default'])
 
 DATABASES = {
     'default': {
