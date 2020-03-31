@@ -288,7 +288,7 @@
                   {{p.levelup}}</b></td>
                 {% else %}
                   <td class='textbound'><b>{{pokemon.special_case}}</b></br>
-                    {% if pokemon.evolve_tool is true %}
+                    {% if pokemon.evolve_tool %}
                       <img src={{pokemon.evolve_tool.url}} width="56" height="56"></td>
                     {% else %}
                       </td>
