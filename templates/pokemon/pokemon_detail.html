@@ -163,7 +163,7 @@
                   {% endif %}
                 {% endif %}
                 {% if forloop.counter == 4 %}
-                  <td class='imgbound'><a href="{% url 'pokemons:pokemon_id' p.pk %}"><img src={{pokemon.evolve_img.url}} width="128" height="128"></a></td>
+                  <td class='imgbound'><a href="{% url 'pokemons:pokemon_id' pokemon.pk %}"><img src={{pokemon.evolve_img.url}} width="128" height="128"></a></td>
                   <td class='textbound arrow'>&#129146;</td>
                 {% endif %}
               {% endfor %}
