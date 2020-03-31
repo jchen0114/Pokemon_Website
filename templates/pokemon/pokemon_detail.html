@@ -283,9 +283,16 @@
                 <td class='imgbound'><a href="{% url 'pokemons:pokemon_id' p.pk %}"><img src={{p.evolve_img.url}} width="128" height="128"></a></td>
                 {% if p.special_case != 'None' %}
                   <td class='textbound'><b>{{p.special_case}}</b></td>
-                {% else %}
+                {% elif p.levelup != 0 %}
                   <td class='textbound'><b>Level</br>
                   {{p.levelup}}</b></td>
+                {% else %}
+                  <td class='textbound'><b>{{pokemon.special_case}}</b></br>
+                    {% if pokemon.evolve_tool is true %}
+                      <img src={{pokemon.evolve_tool.url}} width="56" height="56"></td>
+                    {% else %}
+                      </td>
+                    {% endif %}
                 {% endif %}
               {% endfor %}
               <td class='imgbound'><a href="{% url 'pokemons:pokemon_id' pokemon.pk %}"><img src={{pokemon.evolve_img.url}} width="128" height="128"></a></td>
