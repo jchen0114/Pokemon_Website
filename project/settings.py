@@ -91,7 +91,7 @@ WSGI_APPLICATION = 'project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'test',
+        'NAME': 'pokemon',
         'CLIENT': {
             'host': 'mongodb+srv://jc0114:taipei101@cluster0-xb9zh.mongodb.net/test?retryWrites=true&w=majority',
             'port': 27017,
