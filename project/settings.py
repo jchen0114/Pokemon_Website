@@ -87,14 +87,17 @@ WSGI_APPLICATION = 'project.wsgi.application'
 #     }
 # }
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'pokemon',
-        'HOST': 'mongodb+srv://jc0114:taipei101@cluster0-xb9zh.mongodb.net/test?retryWrites=true&w=majority',
-        'USER': 'jc0114',
-        'PASSWORD': 'taipei101',
-
+        'NAME': 'test',
+        'CLIENT': {
+            'host': 'mongodb+srv://jc0114:taipei101@cluster0-xb9zh.mongodb.net/test?retryWrites=true&w=majority',
+            'port': 27017,
+            'username': 'jc0114',
+            'password': 'taipei101',
+            } 
         }
     }
 
