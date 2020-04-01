@@ -39,7 +39,7 @@
   <th class="bgname">No.{{pokemon.number}}</th>
 </tr>
 <tr>
-  <td colspan="2" class="bgname"><img src={{pokemon.image.url}} width="256" height="256" class='img'></td>
+  <td colspan="2" class="bgname"><img src={{pokemon.image}} width="256" height="256" class='img'></td>
 </tr>
 <tr>
   {% if pokemon.type_idx == 1 %} <td colspan="2" class="bgtype subbgnormal">
@@ -124,7 +124,7 @@
             <tr>
               {% for p in pokemon.upper_evolve.all %}
                 {% if forloop.counter <= 3 %}
-                  <td class='imgbound'><a href="{% url 'pokemons:pokemon_id' p.pk %}"><img src={{p.evolve_img.url}} width="128" height="128"></a></td>
+                  <td class='imgbound'><a href="{% url 'pokemons:pokemon_id' p.pk %}"><img src={{p.evolve_img}} width="128" height="128"></a></td>
                   {% if forloop.counter <= 2 %}
                     <td class='textbound'></td>
                   {% endif %}
@@ -157,13 +157,13 @@
             <tr>
               {% for p in pokemon.upper_evolve.all %}
                 {% if forloop.counter == 4 or forloop.counter == 5 %}
-                  <td class='imgbound'><a href="{% url 'pokemons:pokemon_id' p.pk %}"><img src={{p.evolve_img.url}} width="128" height="128"></a></td>
+                  <td class='imgbound'><a href="{% url 'pokemons:pokemon_id' p.pk %}"><img src={{p.evolve_img}} width="128" height="128"></a></td>
                   {% if forloop.counter == 4 %}
                     <td class='textbound arrow'>&#129144;</td>
                   {% endif %}
                 {% endif %}
                 {% if forloop.counter == 4 %}
-                  <td class='imgbound'><a href="{% url 'pokemons:pokemon_id' pokemon.pk %}"><img src={{pokemon.evolve_img.url}} width="128" height="128"></a></td>
+                  <td class='imgbound'><a href="{% url 'pokemons:pokemon_id' pokemon.pk %}"><img src={{pokemon.evolve_img}} width="128" height="128"></a></td>
                   <td class='textbound arrow'>&#129146;</td>
                 {% endif %}
               {% endfor %}
@@ -198,7 +198,7 @@
             <tr>
               {% for p in pokemon.upper_evolve.all %}
                 {% if forloop.counter >= 6 %}
-                  <td class='imgbound'><a href="{% url 'pokemons:pokemon_id' p.pk %}"><img src={{p.evolve_img.url}} width="128" height="128"></a></td>
+                  <td class='imgbound'><a href="{% url 'pokemons:pokemon_id' p.pk %}"><img src={{p.evolve_img}} width="128" height="128"></a></td>
                   {% if forloop.counter == 6 or forloop.counter == 7 %}
                     <td class='textbound'></td>
                   {% endif %}
@@ -227,7 +227,7 @@
           <table id='imgtable'>
             <tr>
               {% for p in pokemon.lower_evolve.all %}
-                <td class='imgbound'><a href="{% url 'pokemons:pokemon_id' p.pk %}"><img src={{p.evolve_img.url}} width="128" height="128"></a></td>
+                <td class='imgbound'><a href="{% url 'pokemons:pokemon_id' p.pk %}"><img src={{p.evolve_img}} width="128" height="128"></a></td>
                 {% if p.special_case != 'None' %}
                   <td class='textbound'><b>{{p.special_case}}</b></td>
                 {% else %}
@@ -235,7 +235,7 @@
                   {{p.levelup}}</b></td>
                 {% endif %}
               {% endfor %}
-              <td class='imgbound'><a href="{% url 'pokemons:pokemon_id' pokemon.pk %}"><img src={{pokemon.evolve_img.url}} width="128" height="128"></a></td>
+              <td class='imgbound'><a href="{% url 'pokemons:pokemon_id' pokemon.pk %}"><img src={{pokemon.evolve_img}} width="128" height="128"></a></td>
               {% if pokemon.special_case != 'None' %}
                 <td class='textbound'><b>{{pokemon.special_case}}</b></td>
               {% else %}
@@ -243,7 +243,7 @@
                 {{pokemon.levelup}}</b></td>
               {% endif %}
               {% for p in pokemon.upper_evolve.all %}
-                <td class='imgbound'><a href="{% url 'pokemons:pokemon_id' p.pk %}"><img src={{p.evolve_img.url}} width="128" height="128"></a></td>
+                <td class='imgbound'><a href="{% url 'pokemons:pokemon_id' p.pk %}"><img src={{p.evolve_img}} width="128" height="128"></a></td>
                 {% if p.special_case != 'None' %}
                   <td class='textbound'><b>{{p.special_case}}</b></td>
                 {% else %}
@@ -280,7 +280,7 @@
           <table id='imgtable'>
             <tr>
               {% for p in pokemon.lower_evolve.all %}
-                <td class='imgbound'><a href="{% url 'pokemons:pokemon_id' p.pk %}"><img src={{p.evolve_img.url}} width="128" height="128"></a></td>
+                <td class='imgbound'><a href="{% url 'pokemons:pokemon_id' p.pk %}"><img src={{p.evolve_img}} width="128" height="128"></a></td>
                 {% if p.special_case != 'None' %}
                   <td class='textbound'><b>{{p.special_case}}</b></td>
                 {% elif p.levelup != 0 %}
@@ -289,13 +289,13 @@
                 {% else %}
                   <td class='textbound'><b>{{pokemon.special_case}}</b></br>
                     {% if pokemon.evolve_tool %}
-                      <img src={{pokemon.evolve_tool.url}} width="56" height="56"></td>
+                      <img src={{pokemon.evolve_tool}} width="56" height="56"></td>
                     {% else %}
                       </td>
                     {% endif %}
                 {% endif %}
               {% endfor %}
-              <td class='imgbound'><a href="{% url 'pokemons:pokemon_id' pokemon.pk %}"><img src={{pokemon.evolve_img.url}} width="128" height="128"></a></td>
+              <td class='imgbound'><a href="{% url 'pokemons:pokemon_id' pokemon.pk %}"><img src={{pokemon.evolve_img}} width="128" height="128"></a></td>
             </tr>
           </table>
         </td>
@@ -320,7 +320,7 @@
         <td id='insideframe'>
           <table id='imgtable'>
             <tr>
-              <td class='imgbound'><a href="{% url 'pokemons:pokemon_id' pokemon.pk %}"><img src={{pokemon.evolve_img.url}} width="128" height="128"></a></td>
+              <td class='imgbound'><a href="{% url 'pokemons:pokemon_id' pokemon.pk %}"><img src={{pokemon.evolve_img}} width="128" height="128"></a></td>
               {% if pokemon.special_case != 'None' %}
                 <td class='textbound'><b>{{pokemon.special_case}}</b></td>
               {% else %}
@@ -328,7 +328,7 @@
                 {{pokemon.levelup}}</b></td>
               {% endif %}
               {% for p in pokemon.upper_evolve.all %}
-                <td class='imgbound'><a href="{% url 'pokemons:pokemon_id' p.pk %}"><img src={{p.evolve_img.url}} width="128" height="128"></a></td>
+                <td class='imgbound'><a href="{% url 'pokemons:pokemon_id' p.pk %}"><img src={{p.evolve_img}} width="128" height="128"></a></td>
                 {% if p.special_case != 0 or p.levelup != 0 %}
                   {% if p.special_case != 'None' %}
                     <td class='textbound'><b>{{p.special_case}}</b></td>
@@ -365,7 +365,7 @@
         <td id='insideframe'>
           <table id='imgtable'>
             <tr>
-              <td class='imgbound'><a href="{% url 'pokemons:pokemon_id' pokemon.pk %}"><img src={{pokemon.evolve_img.url}} width="128" height="128"></a></td>
+              <td class='imgbound'><a href="{% url 'pokemons:pokemon_id' pokemon.pk %}"><img src={{pokemon.evolve_img}} width="128" height="128"></a></td>
             </tr>
           </table>
         </td>

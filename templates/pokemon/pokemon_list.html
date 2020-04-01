@@ -17,7 +17,7 @@
   <tr>
     <td align="center"><font size='10'><strong>{{pp.rank}}</strong></font></td>
     <td align="center" class="img"><a href="{% url 'pokemons:pokemon_id' pp.pk %}">
-      <img src="{{pp.image.url}}" width="256" height="256" title='{{pp.pokemon_name}}'></a></td>
+      <img src="{{pp.image}}" width="256" height="256" title='{{pp.pokemon_name}}'></a></td>
     <td><font size='5'><strong>{{pp.pokemon_name}}</strong></font></td>
   </tr>
   {% endfor %}

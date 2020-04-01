@@ -12,7 +12,7 @@
     {% for mm in object_list %}
     {% if mm.title == 'Mewtwo Strikes Back' or mm.title == 'The Power of One' or mm.title == 'Spell of the Unown'%}
     <td align="center" class="zoom img"><a href="{% url 'pokemons:movie_id' mm.pk %}">
-      <img src="{{mm.image.url}}" class='img' width="200" ></a></td>
+      <img src="{{mm.image}}" class='img' width="200" ></a></td>
     {% endif %}
     {% endfor %}
   </tr>

@@ -27,7 +27,7 @@
           <table class='center'>
             <tr>
               <td align='center'>
-                <a href="{% url 'pokemons:pokemon_id' p.pk %}"><img src="{{p.image.url}}" width="128" height="128"></a>
+                <a href="{% url 'pokemons:pokemon_id' p.pk %}"><img src="{{p.image}}" width="128" height="128"></a>
               </td>
             </tr>
             <tr>
@@ -37,10 +37,16 @@
             </tr>
           </table>
         </td>
-        {% if not forloop.last and forloop.counter == 5 or forloop.counter == 10 or forloop.counter == 15 or forloop.counter == 20 %}
+        {% if forloop.counter == 5 or forloop.counter == 10 or forloop.counter == 15 %}
         </tr>
         <tr>
-        {% elif forloop.counter == 25 or forloop.counter == 30 or forloop.counter == 35 or forloop.counter == 40 or forloop.counter == 45 %}
+        {% elif forloop.counter == 20 or forloop.counter == 25 or forloop.counter == 30 %}
+        </tr>
+        <tr>
+        {% elif forloop.counter == 35 or forloop.counter == 40 or forloop.counter == 45 %}
+        </tr>
+        <tr>
+        {% elif forloop.counter == 50 or forloop.counter == 55 or forloop.counter == 60 %}
         </tr>
         <tr>
         {% endif %}

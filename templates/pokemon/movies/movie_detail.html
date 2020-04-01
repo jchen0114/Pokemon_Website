@@ -11,14 +11,14 @@
 <hr>
 
 <h2>Summary</h2>
-<p class='summary'><img src={{movie.image.url}} class='img'> {{movie.summary}} </p>
+<p class='summary'><img src={{movie.image}} class='img'> {{movie.summary}} </p>
 
 <h2 class='dist'> Featured Pokémon </h2>
 
 <table>
   <tr>
     {% for mm in movie.pokemon.all %}
-      <td><a href="{% url 'pokemons:pokemon_id' mm.pk %}"><img src={{ mm.image.url }} width="200" height="230" class='pkimg'></a></td>
+      <td><a href="{% url 'pokemons:pokemon_id' mm.pk %}"><img src={{mm.image}} width="200" height="230" class='pkimg'></a></td>
     {% endfor %}
   </tr>
   <tr>
