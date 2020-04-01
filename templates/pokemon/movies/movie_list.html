@@ -11,21 +11,34 @@
   <tr>
     {% for mm in object_list %}
     {% if mm.title == 'Mewtwo Strikes Back' or mm.title == 'The Power of One' or mm.title == 'Spell of the Unown'%}
-    <td align="center" class="zoom img"><a href="{% url 'pokemons:movie_id' mm.pk %}">
-      <img src="{{mm.image}}" class='img' width="200" ></a></td>
+    <td align="center" class="zoom"><a href="{% url 'pokemons:movie_id' mm.pk %}">
+      <img src="{{mm.image}}" class='img' width="200" height="285"></a></td>
     {% endif %}
     {% endfor %}
   </tr>
   <tr>
     {% for mm in object_list %}
     {% if mm.title == 'Mewtwo Strikes Back' or mm.title == 'The Power of One' or mm.title == 'Spell of the Unown'%}
-    <td align="center"><font size='4'>{{mm.title}}</font></td>
+    <td align="center" class="dist"><font size='4'>{{mm.title}}</font></td>
+    {% endif %}
+    {% endfor %}
+  </tr>
+  <tr>
+    {% for mm in object_list %}
+    {% if mm.title == 'Celebi - Voice of the Forest' or mm.title == 'Pokémon Heroes- Latios and Latias' or mm.title == 'Jirachi - Wish Maker'%}
+    <td align="center" class="zoom"><a href="{% url 'pokemons:movie_id' mm.pk %}">
+      <img src="{{mm.image}}" class='img' width="200" height="285"></a></td>
+    {% endif %}
+    {% endfor %}
+  </tr>
+  <tr>
+    {% for mm in object_list %}
+    {% if mm.title == 'Celebi - Voice of the Forest' or mm.title == 'Pokémon Heroes- Latios and Latias' or mm.title == 'Jirachi - Wish Maker'%}
+    <td align="center" class="dist"><font size='4'>{{mm.title}}</font></td>
     {% endif %}
     {% endfor %}
   </tr>
 </table>
-
-<!-- <li> Types : {% for t in pokemon.types.all %} {{ t }}{% if not forloop.last %}, {% endif %}{% endfor %}</li> -->
 
 <p></p>
 </body>

@@ -5,16 +5,21 @@
 }
 
 .img {
-    max-width: 50%;
-    height: auto;
+    /* max-width: 50%; */
+    height: 285px;
+    width: 200px;
     background-size: cover;
 }
 
 .zoom {
-    padding: 20px 0 25px 0;
+    padding: 20px 0 20px 0;
     transition: transform .2s;
 }
   
 .zoom:hover {
     transform: scale(1.2); 
+}
+
+.dist {
+    padding: 10px 0 10px 0;
 }

@@ -111,7 +111,7 @@
 <h2>Region</h2>
 <p>{{pokemon.region}}</p>
 <h2>Weakness</h2>
-<p>{% for t in pokemon.weakness.all %} {{t}} {% if not forloop.last %}, {% endif %}{% endfor %}</p>
+<p>{% for t in pokemon.weakness.all %}{{t}}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
 
 <h2>Evolution Chain</h2>
 
