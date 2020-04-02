@@ -4,12 +4,37 @@
 }
 
 .maintable {
-    margin: 0.3cm 0.8cm;
+    margin: 0.3cm 0.8cm 0 0;
     border-collapse: separate;
     border-spacing: 15px;
     border-radius: 10px;
     text-align: center;
 }
+
+.formtable {
+    margin: 0.3cm 0.1cm 0 0.3cm;
+    border: 1px solid black;
+    border-collapse: separate;
+    border-spacing: 5px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.formtitle {
+    border-color: transparent;
+    text-align: center;
+}
+.formname{
+    padding: 0, 0.05cm, 0 0.05cm;
+    border: 1px solid black;
+    border-collapse: separate;
+    border-spacing: 15px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.formname:link, .formname:visited, .formname:hover, .formname:active {text-decoration: underline;}
+
 
 .bgnormal {background-color: rgb(197, 197, 197) !important;}
 .bgground {background-color: rgb(197, 141, 76) !important;}

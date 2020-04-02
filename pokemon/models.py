@@ -19,6 +19,13 @@ class Generation(models.Model):
     def __str__(self):
         return self.generation
 
+class Special(models.Model):
+    name = models.CharField(max_length=20)
+    image = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
 class Pokemon(models.Model):
     pokemon_name = models.CharField(max_length = 20)
     types = models.ManyToManyField(Type)
@@ -38,6 +45,7 @@ class Pokemon(models.Model):
     evolve_kinds = models.IntegerField()
     region = models.ForeignKey(Region, on_delete=models.CASCADE)
     generation = models.ForeignKey(Generation, on_delete=models.CASCADE)
+    special_forms = models.ManyToManyField(Special, related_name='special')
 
 
     def __str__(self):
@@ -72,6 +80,7 @@ class Movie(models.Model):
     def get_absolute_url(self):
         return reverse("pokemons:movie", kwargs={"pk": self.pk})
 
+
 from django.contrib import admin
 
 @admin.register(Pokemon)
@@ -101,3 +110,8 @@ class RegionAdmin(admin.ModelAdmin):
 @admin.register(Generation)
 class GenerationAdmin(admin.ModelAdmin):
     list_diplay = ['id', 'generation']
+
+
+@admin.register(Special)
+class SpecialAdmin(admin.ModelAdmin):
+    list_display = ['name']

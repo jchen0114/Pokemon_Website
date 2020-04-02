@@ -39,7 +39,7 @@
   <th class="bgname">No.{{pokemon.number}}</th>
 </tr>
 <tr>
-  <td colspan="2" class="bgname"><img src={{pokemon.image}} width="256" height="256" class='img'></td>
+  <td colspan="2" class="bgname"><img id='myImage' src={{pokemon.image}} width="256" height="256" class='img'></td>
 </tr>
 <tr>
   {% if pokemon.type_idx == 1 %} <td colspan="2" class="bgtype subbgnormal">
@@ -104,6 +104,72 @@
   </td>
 </tr>
 </table>
+
+{% if pokemon.special_forms.count != 0 %}
+  {% if pokemon.type_idx == 1 %} <table align="right" class='bgnormal formtable'>
+  {% elif pokemon.type_idx == 2 %} <table align="right" class='bgground formtable'>
+  {% elif pokemon.type_idx == 3 %} <table align="right" class='bgdark formtable'>
+  {% elif pokemon.type_idx == 4 %} <table align="right" class='bgfairy formtable'>
+  {% elif pokemon.type_idx == 5 %} <table align="right" class='bgpsychic formtable'>
+  {% elif pokemon.type_idx == 6 %} <table align="right" class='bgghost formtable'>
+  {% elif pokemon.type_idx == 7 %} <table align="right" class='bgfire formtable'>
+  {% elif pokemon.type_idx == 8 %} <table align="right" class='bgpoison formtable'>
+  {% elif pokemon.type_idx == 9 %} <table align="right" class='bggrass formtable'>
+  {% elif pokemon.type_idx == 10 %} <table align="right" class='bgelectric formtable'>
+  {% elif pokemon.type_idx == 11 %} <table align="right" class='bgsteel formtable'>
+  {% elif pokemon.type_idx == 12 %} <table align="right" class='bgwater formtable'>
+  {% elif pokemon.type_idx == 13 %} <table align="right" class='bgfighting formtable'>
+  {% elif pokemon.type_idx == 14 %} <table align="right" class='bgflying formtable'>
+  {% elif pokemon.type_idx == 15 %} <table align="right" class='bgdragon formtable'>
+  {% elif pokemon.type_idx == 16 %} <table align="right" class='bgice formtable'>
+  {% endif %}
+    <tr>
+      <th class='formtitle'>Forms</th>
+    </tr>
+    <tr>
+      {% if pokemon.type_idx == 1 %} <td colspan="2" class="formname subbgnormal" onclick="document.getElementById('myImage').src='{{pokemon.image}}'">
+      {% elif pokemon.type_idx == 2 %} <td colspan="2" class="formname subbgground" onclick="document.getElementById('myImage').src='{{pokemon.image}}'">
+      {% elif pokemon.type_idx == 3 %} <td colspan="2" class="formname subbgdark" onclick="document.getElementById('myImage').src='{{pokemon.image}}'">
+      {% elif pokemon.type_idx == 4 %} <td colspan="2" class="formname subbgfairy" onclick="document.getElementById('myImage').src='{{pokemon.image}}'">
+      {% elif pokemon.type_idx == 5 %} <td colspan="2" class="formname subbgpsychic" onclick="document.getElementById('myImage').src='{{pokemon.image}}'">
+      {% elif pokemon.type_idx == 6 %} <td colspan="2" class="formname subbgghost" onclick="document.getElementById('myImage').src='{{pokemon.image}}'">
+      {% elif pokemon.type_idx == 7 %} <td colspan="2" class="formname subbgfire" onclick="document.getElementById('myImage').src='{{pokemon.image}}'">
+      {% elif pokemon.type_idx == 8 %} <td colspan="2" class="formname subbgpoison" onclick="document.getElementById('myImage').src='{{pokemon.image}}'">
+      {% elif pokemon.type_idx == 9 %} <td colspan="2" class="formname subbggrass" onclick="document.getElementById('myImage').src='{{pokemon.image}}'">
+      {% elif pokemon.type_idx == 10 %} <td colspan="2" class="formname subbgelectric" onclick="document.getElementById('myImage').src='{{pokemon.image}}'">
+      {% elif pokemon.type_idx == 11 %} <td colspan="2" class="formname subbgsteel" onclick="document.getElementById('myImage').src='{{pokemon.image}}'">
+      {% elif pokemon.type_idx == 12 %} <td colspan="2" class="formname subbgwater" onclick="document.getElementById('myImage').src='{{pokemon.image}}'">
+      {% elif pokemon.type_idx == 13 %} <td colspan="2" class="formname subbgfighting" onclick="document.getElementById('myImage').src='{{pokemon.image}}'">
+      {% elif pokemon.type_idx == 14 %} <td colspan="2" class="formname subbgflying" onclick="document.getElementById('myImage').src='{{pokemon.image}}'">
+      {% elif pokemon.type_idx == 15 %} <td colspan="2" class="formname subbgdragon" onclick="document.getElementById('myImage').src='{{pokemon.image}}'">
+      {% elif pokemon.type_idx == 16 %} <td colspan="2" class="formname subbgice" onclick="document.getElementById('myImage').src='{{pokemon.image}}'">
+      {% endif %}
+        {{pokemon.pokemon_name}}</td>
+    </tr>
+    {% for f in pokemon.special_forms.all %}
+      <tr>
+        {% if pokemon.type_idx == 1 %} <td colspan="2" class="formname subbgnormal" onclick="document.getElementById('myImage').src='{{f.image}}'">
+        {% elif pokemon.type_idx == 2 %} <td colspan="2" class="formname subbgground" onclick="document.getElementById('myImage').src='{{f.image}}'">
+        {% elif pokemon.type_idx == 3 %} <td colspan="2" class="formname subbgdark" onclick="document.getElementById('myImage').src='{{f.image}}'">
+        {% elif pokemon.type_idx == 4 %} <td colspan="2" class="formname subbgfairy" onclick="document.getElementById('myImage').src='{{f.image}}'">
+        {% elif pokemon.type_idx == 5 %} <td colspan="2" class="formname subbgpsychic" onclick="document.getElementById('myImage').src='{{f.image}}'">
+        {% elif pokemon.type_idx == 6 %} <td colspan="2" class="formname subbgghost" onclick="document.getElementById('myImage').src='{{f.image}}'">
+        {% elif pokemon.type_idx == 7 %} <td colspan="2" class="formname subbgfire" onclick="document.getElementById('myImage').src='{{f.image}}'">
+        {% elif pokemon.type_idx == 8 %} <td colspan="2" class="formname subbgpoison" onclick="document.getElementById('myImage').src='{{f.image}}'">
+        {% elif pokemon.type_idx == 9 %} <td colspan="2" class="formname subbggrass" onclick="document.getElementById('myImage').src='{{f.image}}'">
+        {% elif pokemon.type_idx == 10 %} <td colspan="2" class="formname subbgelectric" onclick="document.getElementById('myImage').src='{{f.image}}'">
+        {% elif pokemon.type_idx == 11 %} <td colspan="2" class="formname subbgsteel" onclick="document.getElementById('myImage').src='{{f.image}}'">
+        {% elif pokemon.type_idx == 12 %} <td colspan="2" class="formname subbgwater" onclick="document.getElementById('myImage').src='{{f.image}}'">
+        {% elif pokemon.type_idx == 13 %} <td colspan="2" class="formname subbgfighting" onclick="document.getElementById('myImage').src='{{f.image}}'">
+        {% elif pokemon.type_idx == 14 %} <td colspan="2" class="formname subbgflying" onclick="document.getElementById('myImage').src='{{f.image}}'">
+        {% elif pokemon.type_idx == 15 %} <td colspan="2" class="formname subbgdragon" onclick="document.getElementById('myImage').src='{{f.image}}'">
+        {% elif pokemon.type_idx == 16 %} <td colspan="2" class="formname subbgice" onclick="document.getElementById('myImage').src='{{f.image}}'">
+        {% endif %}
+          {{f.name}}</td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endif %}
 
 
 <h2>Summary</h2>
@@ -288,7 +354,7 @@
                   {{p.levelup}}</b></td>
                 {% else %}
                   <td class='textbound'><b>{{pokemon.special_case}}</b></br>
-                    {% if pokemon.evolve_tool %}
+                    {% if pokemon.pokemon_name == 'Vaporeon' or pokemon.pokemon_name == 'Jolteon' or pokemon.pokemon_name == 'Flareon' or pokemon.pokemon_name == 'Leafeon' or pokemon.pokemon_name == 'Glaceon'%}
                       <img src={{pokemon.evolve_tool}} width="56" height="56"></td>
                     {% else %}
                       </td>
