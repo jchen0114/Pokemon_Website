@@ -3,18 +3,14 @@
 {% block content%}
 <!DOCTYPE html>
 <head>
-  {% load static %}
+  {% load staticfiles %}
   <link rel="stylesheet" type="text/css" href="{% static 'css/pokemon_detail.css' %}">
-  <style>
+  <script src="{% static 'js/pokemon_detail.js' %}"></script>
 
-    table, td, th {
-      border: 1px solid black;
-    }
-    </style>
 </head>
 <body>
-<h1 align='center' id='title'> {{pokemon.pokemon_name}} </h1>
-<hr>
+<h1 class='nametitle'> {{pokemon.pokemon_name}} </h1>
+<hr class='bound'>
 
 {% if pokemon.type_idx == 1 %} <table align="right" class='bgnormal maintable'>
 {% elif pokemon.type_idx == 2 %} <table align="right" class='bgground maintable'>
@@ -32,6 +28,8 @@
 {% elif pokemon.type_idx == 14 %} <table align="right" class='bgflying maintable'>
 {% elif pokemon.type_idx == 15 %} <table align="right" class='bgdragon maintable'>
 {% elif pokemon.type_idx == 16 %} <table align="right" class='bgice maintable'>
+{% elif pokemon.type_idx == 17 %} <table align="right" class='bgrock maintable'>
+{% elif pokemon.type_idx == 18 %} <table align="right" class='bgbug maintable'>
 {% endif %}
 
 <tr>
@@ -58,6 +56,8 @@
   {% elif pokemon.type_idx == 14 %} <td colspan="2" class="bgtype subbgflying">
   {% elif pokemon.type_idx == 15 %} <td colspan="2" class="bgtype subbgdragon">
   {% elif pokemon.type_idx == 16 %} <td colspan="2" class="bgtype subbgice">
+  {% elif pokemon.type_idx == 17 %} <td colspan="2" class="bgtype subbgrock">
+  {% elif pokemon.type_idx == 18 %} <td colspan="2" class="bgtype subbgbug">
   {% endif %}
   <strong>Type</strong>
     {% if pokemon.type_idx2 == 1 %} <table class='subbox bnormal'>
@@ -75,7 +75,9 @@
     {% elif pokemon.type_idx2 == 13 %} <table class='subbox bfighting'>
     {% elif pokemon.type_idx2 == 14 %} <table class='subbox bflying'>
     {% elif pokemon.type_idx2 == 15 %} <table class='subbox bdragon'>
-    {% elif pokemon.type_idx2 == 16 %} <table class='subbox bdice'>
+    {% elif pokemon.type_idx2 == 16 %} <table class='subbox bice'>
+    {% elif pokemon.type_idx2 == 17 %} <table class='subbox brock'>
+    {% elif pokemon.type_idx2 == 18 %} <table class='subbox bbug'>
     {% endif %}
       <tr>
         {% if pokemon.type_idx2 == 1 %} <td class='subbox bnormal'>
@@ -93,7 +95,9 @@
         {% elif pokemon.type_idx2 == 13 %} <td class='subbox bfighting'>
         {% elif pokemon.type_idx2 == 14 %} <td class='subbox bflying'>
         {% elif pokemon.type_idx2 == 15 %} <td class='subbox bdragon'>
-        {% elif pokemon.type_idx2 == 16 %} <td class='subbox bdice'>
+        {% elif pokemon.type_idx2 == 16 %} <td class='subbox bice'>
+        {% elif pokemon.type_idx2 == 17 %} <td class='subbox brock'>
+        {% elif pokemon.type_idx2 == 18 %} <td class='subbox bbug'>
         {% endif %}
           {% for t in pokemon.types.all %}
             <strong>{{t}}</strong>{% if not forloop.last %}, {% endif %}
@@ -103,7 +107,75 @@
     </table>
   </td>
 </tr>
+<tr>
+  {% if pokemon.type_idx == 1 %} <td colspan="2" class="bgtype subbgnormal">
+  {% elif pokemon.type_idx == 2 %} <td colspan="2" class="bgtype subbgground">
+  {% elif pokemon.type_idx == 3 %} <td colspan="2" class="bgtype subbgdark">
+  {% elif pokemon.type_idx == 4 %} <td colspan="2" class="bgtype subbgfairy">
+  {% elif pokemon.type_idx == 5 %} <td colspan="2" class="bgtype subbgpsychic">
+  {% elif pokemon.type_idx == 6 %} <td colspan="2" class="bgtype subbgghost">
+  {% elif pokemon.type_idx == 7 %} <td colspan="2" class="bgtype subbgfire">
+  {% elif pokemon.type_idx == 8 %} <td colspan="2" class="bgtype subbgpoison">
+  {% elif pokemon.type_idx == 9 %} <td colspan="2" class="bgtype subbggrass">
+  {% elif pokemon.type_idx == 10 %} <td colspan="2" class="bgtype subbgelectric">
+  {% elif pokemon.type_idx == 11 %} <td colspan="2" class="bgtype subbgsteel">
+  {% elif pokemon.type_idx == 12 %} <td colspan="2" class="bgtype subbgwater">
+  {% elif pokemon.type_idx == 13 %} <td colspan="2" class="bgtype subbgfighting">
+  {% elif pokemon.type_idx == 14 %} <td colspan="2" class="bgtype subbgflying">
+  {% elif pokemon.type_idx == 15 %} <td colspan="2" class="bgtype subbgdragon">
+  {% elif pokemon.type_idx == 16 %} <td colspan="2" class="bgtype subbgice">
+  {% elif pokemon.type_idx == 17 %} <td colspan="2" class="bgtype subbgrock">
+  {% elif pokemon.type_idx == 18 %} <td colspan="2" class="bgtype subbgbug">
+  {% endif %}
+  <strong>Generation</strong>
+    {% if pokemon.type_idx2 == 1 %} <table class='subbox bnormal'>
+    {% elif pokemon.type_idx2 == 2 %} <table class='subbox bground'>
+    {% elif pokemon.type_idx2 == 3 %} <table class='subbox bdark'>
+    {% elif pokemon.type_idx2 == 4 %} <table class='subbox bfairy'>
+    {% elif pokemon.type_idx2 == 5 %} <table class='subbox bpsychic'>
+    {% elif pokemon.type_idx2 == 6 %} <table class='subbox bghost'>
+    {% elif pokemon.type_idx2 == 7 %} <table class='subbox bfire'>
+    {% elif pokemon.type_idx2 == 8 %} <table class='subbox bpoison'>
+    {% elif pokemon.type_idx2 == 9 %} <table class='subbox bgrass'>
+    {% elif pokemon.type_idx2 == 10 %} <table class='subbox belectric'>
+    {% elif pokemon.type_idx2 == 11 %} <table class='subbox bsteel'>
+    {% elif pokemon.type_idx2 == 12 %} <table class='subbox bwater'>
+    {% elif pokemon.type_idx2 == 13 %} <table class='subbox bfighting'>
+    {% elif pokemon.type_idx2 == 14 %} <table class='subbox bflying'>
+    {% elif pokemon.type_idx2 == 15 %} <table class='subbox bdragon'>
+    {% elif pokemon.type_idx2 == 16 %} <table class='subbox bice'>
+    {% elif pokemon.type_idx2 == 17 %} <table class='subbox brock'>
+    {% elif pokemon.type_idx2 == 18 %} <table class='subbox bbug'>
+    {% endif %}
+      <tr>
+        {% if pokemon.type_idx2 == 1 %} <td class='subbox bnormal'>
+        {% elif pokemon.type_idx2 == 2 %} <td class='subbox bground'>
+        {% elif pokemon.type_idx2 == 3 %} <td class='subbox bdark'>
+        {% elif pokemon.type_idx2 == 4 %} <td class='subbox bfairy'>
+        {% elif pokemon.type_idx2 == 5 %} <td class='subbox bpsychic'>
+        {% elif pokemon.type_idx2 == 6 %} <td class='subbox bghost'>
+        {% elif pokemon.type_idx2 == 7 %} <td class='subbox bfire'>
+        {% elif pokemon.type_idx2 == 8 %} <td class='subbox bpoison'>
+        {% elif pokemon.type_idx2 == 9 %} <td class='subbox bgrass'>
+        {% elif pokemon.type_idx2 == 10 %} <td class='subbox belectric'>
+        {% elif pokemon.type_idx2 == 11 %} <td class='subbox bsteel'>
+        {% elif pokemon.type_idx2 == 12 %} <td class='subbox bwater'>
+        {% elif pokemon.type_idx2 == 13 %} <td class='subbox bfighting'>
+        {% elif pokemon.type_idx2 == 14 %} <td class='subbox bflying'>
+        {% elif pokemon.type_idx2 == 15 %} <td class='subbox bdragon'>
+        {% elif pokemon.type_idx2 == 16 %} <td class='subbox bice'>
+        {% elif pokemon.type_idx2 == 17 %} <td class='subbox brock'>
+        {% elif pokemon.type_idx2 == 18 %} <td class='subbox bbug'>
+        {% endif %}
+        <strong>{{pokemon.generation}}</strong>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
 </table>
+
+
 
 {% if pokemon.special_forms.count != 0 %}
   {% if pokemon.type_idx == 1 %} <table align="right" class='bgnormal formtable'>
@@ -122,48 +194,54 @@
   {% elif pokemon.type_idx == 14 %} <table align="right" class='bgflying formtable'>
   {% elif pokemon.type_idx == 15 %} <table align="right" class='bgdragon formtable'>
   {% elif pokemon.type_idx == 16 %} <table align="right" class='bgice formtable'>
+  {% elif pokemon.type_idx == 17 %} <table align="right" class='bgrock formtable'>
+  {% elif pokemon.type_idx == 18 %} <table align="right" class='bgbug formtable'>
   {% endif %}
     <tr>
       <th class='formtitle'>Forms</th>
     </tr>
     <tr>
-      {% if pokemon.type_idx == 1 %} <td colspan="2" class="formname subbgnormal" onclick="document.getElementById('myImage').src='{{pokemon.image}}'">
-      {% elif pokemon.type_idx == 2 %} <td colspan="2" class="formname subbgground" onclick="document.getElementById('myImage').src='{{pokemon.image}}'">
-      {% elif pokemon.type_idx == 3 %} <td colspan="2" class="formname subbgdark" onclick="document.getElementById('myImage').src='{{pokemon.image}}'">
-      {% elif pokemon.type_idx == 4 %} <td colspan="2" class="formname subbgfairy" onclick="document.getElementById('myImage').src='{{pokemon.image}}'">
-      {% elif pokemon.type_idx == 5 %} <td colspan="2" class="formname subbgpsychic" onclick="document.getElementById('myImage').src='{{pokemon.image}}'">
-      {% elif pokemon.type_idx == 6 %} <td colspan="2" class="formname subbgghost" onclick="document.getElementById('myImage').src='{{pokemon.image}}'">
-      {% elif pokemon.type_idx == 7 %} <td colspan="2" class="formname subbgfire" onclick="document.getElementById('myImage').src='{{pokemon.image}}'">
-      {% elif pokemon.type_idx == 8 %} <td colspan="2" class="formname subbgpoison" onclick="document.getElementById('myImage').src='{{pokemon.image}}'">
-      {% elif pokemon.type_idx == 9 %} <td colspan="2" class="formname subbggrass" onclick="document.getElementById('myImage').src='{{pokemon.image}}'">
-      {% elif pokemon.type_idx == 10 %} <td colspan="2" class="formname subbgelectric" onclick="document.getElementById('myImage').src='{{pokemon.image}}'">
-      {% elif pokemon.type_idx == 11 %} <td colspan="2" class="formname subbgsteel" onclick="document.getElementById('myImage').src='{{pokemon.image}}'">
-      {% elif pokemon.type_idx == 12 %} <td colspan="2" class="formname subbgwater" onclick="document.getElementById('myImage').src='{{pokemon.image}}'">
-      {% elif pokemon.type_idx == 13 %} <td colspan="2" class="formname subbgfighting" onclick="document.getElementById('myImage').src='{{pokemon.image}}'">
-      {% elif pokemon.type_idx == 14 %} <td colspan="2" class="formname subbgflying" onclick="document.getElementById('myImage').src='{{pokemon.image}}'">
-      {% elif pokemon.type_idx == 15 %} <td colspan="2" class="formname subbgdragon" onclick="document.getElementById('myImage').src='{{pokemon.image}}'">
-      {% elif pokemon.type_idx == 16 %} <td colspan="2" class="formname subbgice" onclick="document.getElementById('myImage').src='{{pokemon.image}}'">
+      {% if pokemon.type_idx == 1 %} <td colspan="2" class="formname subbgnormal" onclick="change('myImage','{{pokemon.image}}')">
+      {% elif pokemon.type_idx == 2 %} <td colspan="2" class="formname subbgground" onclick="change('myImage','{{pokemon.image}}')">
+      {% elif pokemon.type_idx == 3 %} <td colspan="2" class="formname subbgdark" onclick="change('myImage','{{pokemon.image}}')">
+      {% elif pokemon.type_idx == 4 %} <td colspan="2" class="formname subbgfairy" onclick="change('myImage','{{pokemon.image}}')">
+      {% elif pokemon.type_idx == 5 %} <td colspan="2" class="formname subbgpsychic" onclick="change('myImage','{{pokemon.image}}')">
+      {% elif pokemon.type_idx == 6 %} <td colspan="2" class="formname subbgghost" onclick="change('myImage','{{pokemon.image}}')">
+      {% elif pokemon.type_idx == 7 %} <td colspan="2" class="formname subbgfire" onclick="change('myImage','{{pokemon.image}}')">
+      {% elif pokemon.type_idx == 8 %} <td colspan="2" class="formname subbgpoison" onclick="change('myImage','{{pokemon.image}}')">
+      {% elif pokemon.type_idx == 9 %} <td colspan="2" class="formname subbggrass" onclick="change('myImage','{{pokemon.image}}')">
+      {% elif pokemon.type_idx == 10 %} <td colspan="2" class="formname subbgelectric" onclick="change('myImage','{{pokemon.image}}')">
+      {% elif pokemon.type_idx == 11 %} <td colspan="2" class="formname subbgsteel" onclick="change('myImage','{{pokemon.image}}')">
+      {% elif pokemon.type_idx == 12 %} <td colspan="2" class="formname subbgwater" onclick="change('myImage','{{pokemon.image}}')">
+      {% elif pokemon.type_idx == 13 %} <td colspan="2" class="formname subbgfighting" onclick="change('myImage','{{pokemon.image}}')">
+      {% elif pokemon.type_idx == 14 %} <td colspan="2" class="formname subbgflying" onclick="change('myImage','{{pokemon.image}}')">
+      {% elif pokemon.type_idx == 15 %} <td colspan="2" class="formname subbgdragon" onclick="change('myImage','{{pokemon.image}}')">
+      {% elif pokemon.type_idx == 16 %} <td colspan="2" class="formname subbgice" onclick="change('myImage','{{pokemon.image}}')">
+      {% elif pokemon.type_idx == 17 %} <td colspan="2" class="formname subbgrock" onclick="change('myImage','{{pokemon.image}}')">
+      {% elif pokemon.type_idx == 18 %} <td colspan="2" class="formname subbgbug" onclick="change('myImage','{{pokemon.image}}')">
       {% endif %}
         {{pokemon.pokemon_name}}</td>
     </tr>
     {% for f in pokemon.special_forms.all %}
       <tr>
-        {% if pokemon.type_idx == 1 %} <td colspan="2" class="formname subbgnormal" onclick="document.getElementById('myImage').src='{{f.image}}'">
-        {% elif pokemon.type_idx == 2 %} <td colspan="2" class="formname subbgground" onclick="document.getElementById('myImage').src='{{f.image}}'">
-        {% elif pokemon.type_idx == 3 %} <td colspan="2" class="formname subbgdark" onclick="document.getElementById('myImage').src='{{f.image}}'">
-        {% elif pokemon.type_idx == 4 %} <td colspan="2" class="formname subbgfairy" onclick="document.getElementById('myImage').src='{{f.image}}'">
-        {% elif pokemon.type_idx == 5 %} <td colspan="2" class="formname subbgpsychic" onclick="document.getElementById('myImage').src='{{f.image}}'">
-        {% elif pokemon.type_idx == 6 %} <td colspan="2" class="formname subbgghost" onclick="document.getElementById('myImage').src='{{f.image}}'">
-        {% elif pokemon.type_idx == 7 %} <td colspan="2" class="formname subbgfire" onclick="document.getElementById('myImage').src='{{f.image}}'">
-        {% elif pokemon.type_idx == 8 %} <td colspan="2" class="formname subbgpoison" onclick="document.getElementById('myImage').src='{{f.image}}'">
-        {% elif pokemon.type_idx == 9 %} <td colspan="2" class="formname subbggrass" onclick="document.getElementById('myImage').src='{{f.image}}'">
-        {% elif pokemon.type_idx == 10 %} <td colspan="2" class="formname subbgelectric" onclick="document.getElementById('myImage').src='{{f.image}}'">
-        {% elif pokemon.type_idx == 11 %} <td colspan="2" class="formname subbgsteel" onclick="document.getElementById('myImage').src='{{f.image}}'">
-        {% elif pokemon.type_idx == 12 %} <td colspan="2" class="formname subbgwater" onclick="document.getElementById('myImage').src='{{f.image}}'">
-        {% elif pokemon.type_idx == 13 %} <td colspan="2" class="formname subbgfighting" onclick="document.getElementById('myImage').src='{{f.image}}'">
-        {% elif pokemon.type_idx == 14 %} <td colspan="2" class="formname subbgflying" onclick="document.getElementById('myImage').src='{{f.image}}'">
-        {% elif pokemon.type_idx == 15 %} <td colspan="2" class="formname subbgdragon" onclick="document.getElementById('myImage').src='{{f.image}}'">
-        {% elif pokemon.type_idx == 16 %} <td colspan="2" class="formname subbgice" onclick="document.getElementById('myImage').src='{{f.image}}'">
+        {% if pokemon.type_idx == 1 %} <td colspan="2" class="formname subbgnormal" onclick="change('myImage','{{f.image}}')">
+        {% elif pokemon.type_idx == 2 %} <td colspan="2" class="formname subbgground" onclick="change('myImage','{{f.image}}')">
+        {% elif pokemon.type_idx == 3 %} <td colspan="2" class="formname subbgdark" onclick="change('myImage','{{f.image}}')">
+        {% elif pokemon.type_idx == 4 %} <td colspan="2" class="formname subbgfairy" onclick="change('myImage','{{f.image}}')">
+        {% elif pokemon.type_idx == 5 %} <td colspan="2" class="formname subbgpsychic" onclick="change('myImage','{{f.image}}')">
+        {% elif pokemon.type_idx == 6 %} <td colspan="2" class="formname subbgghost" onclick="change('myImage','{{f.image}}')">
+        {% elif pokemon.type_idx == 7 %} <td colspan="2" class="formname subbgfire" onclick="change('myImage','{{f.image}}')">
+        {% elif pokemon.type_idx == 8 %} <td colspan="2" class="formname subbgpoison" onclick="change('myImage','{{f.image}}')">
+        {% elif pokemon.type_idx == 9 %} <td colspan="2" class="formname subbggrass" onclick="change('myImage','{{f.image}}')">
+        {% elif pokemon.type_idx == 10 %} <td colspan="2" class="formname subbgelectric" onclick="change('myImage','{{f.image}}')">
+        {% elif pokemon.type_idx == 11 %} <td colspan="2" class="formname subbgsteel" onclick="change('myImage','{{f.image}}')">
+        {% elif pokemon.type_idx == 12 %} <td colspan="2" class="formname subbgwater" onclick="change('myImage','{{f.image}}')">
+        {% elif pokemon.type_idx == 13 %} <td colspan="2" class="formname subbgfighting" onclick="change('myImage','{{f.image}}')">
+        {% elif pokemon.type_idx == 14 %} <td colspan="2" class="formname subbgflying" onclick="change('myImage','{{f.image}}')">
+        {% elif pokemon.type_idx == 15 %} <td colspan="2" class="formname subbgdragon" onclick="change('myImage','{{f.image}}')">
+        {% elif pokemon.type_idx == 16 %} <td colspan="2" class="formname subbgice" onclick="change('myImage','{{f.image}}')">
+        {% elif pokemon.type_idx == 17 %} <td colspan="2" class="formname subbgrock" onclick="change('myImage','{{f.image}}')">
+        {% elif pokemon.type_idx == 18 %} <td colspan="2" class="formname subbgbug" onclick="change('myImage','{{f.image}}')">
         {% endif %}
           {{f.name}}</td>
       </tr>
@@ -172,16 +250,16 @@
 {% endif %}
 
 
-<h2>Summary</h2>
-<p>{{pokemon.summary}}</p>
-<h2>Region</h2>
-<p>{{pokemon.region}}</p>
-<h2>Weakness</h2>
-<p>{% for t in pokemon.weakness.all %}{{t}}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+<h2 class='leftmargin'>Summary</h2>
+<p class='leftmargin'>{{pokemon.summary}}</p>
+<h2 class='leftmargin'>Region</h2>
+<p class='leftmargin'>{{pokemon.region}}</p>
+<h2 class='leftmargin'>Weakness</h2>
+<p class='leftmargin'>{% for t in pokemon.weakness.all %}{{t}}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
 
-<h2>Evolution Chain</h2>
+<h2 class='leftmargin'>Evolution Chain</h2>
 
-<div>
+<div class='leftmargin'>
   {% if pokemon.pokemon_name == 'Eevee' %}
     <table id='chaintable'>
       <tr>
@@ -285,7 +363,182 @@
         </td>
       </tr>
     </table>
-  
+  {% elif pokemon.pokemon_name == 'Ralts' %}
+    <table id='specialchaintable'>
+      <tr>
+        <td rowspan="2" id='inside'>
+          <table id='innerchaintable'>
+            <tr>
+              <td class='imgbound'><a href="{% url 'pokemons:pokemon_id' pokemon.pk %}"><img src={{pokemon.evolve_img}} width="128" height="128"></a></td>
+            </tr>
+            <tr>
+              <td class='namebound'><b>{{pokemon.pokemon_name}}</b></td>
+            </tr>
+          </table>
+        </td>
+        <td rowspan="2" id='inside'>
+          <br>
+          <strong>Level<br>
+          {{pokemon.levelup}}</strong>
+          <br>
+          <br>
+          <br>
+          &#129146;
+        </td>
+        <td rowspan="2" id='inside'>
+          <table id='innerchaintable'>
+            <tr>
+              {% for p in pokemon.upper_evolve.all %}
+                {% if forloop.counter == 1 %}
+                  <td class='imgbound'><a href="{% url 'pokemons:pokemon_id' p.pk %}"><img src={{p.evolve_img}} width="128" height="128"></a></td>
+                {% endif %}
+              {% endfor %}
+            </tr>
+            <tr>
+              {% for p in pokemon.upper_evolve.all %}
+                {% if forloop.counter == 1 %}
+                  <td class='namebound'><b>{{p.pokemon_name}}</b></td>
+                {% endif %}
+              {% endfor %}
+            </tr>
+          </table>
+        </td>
+        <td id='inside'>
+          <strong>Level</br>
+          30</br></strong>
+          &#129149;
+        </td>
+        <td id='inside'>
+          <table id='innerchaintable'>
+            {% for p in pokemon.upper_evolve.all %}
+              {% if forloop.counter == 2 %}
+                <tr>
+                  <td class='imgbound'><a href="{% url 'pokemons:pokemon_id' p.pk %}"><img src={{p.evolve_img}} width="128" height="128"></a></td>
+                </tr>
+                <tr>
+                  <td class='namebound'><b>{{p.pokemon_name}}</b></td>
+                </tr>
+              {% endif %}
+            {% endfor %}
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td id='inside'>
+          {% for p in pokemon.upper_evolve.all %}
+            {% if forloop.counter == 3 %}
+              &#129150;<br>
+              <strong>{{p.special_case}}<br>
+              <img src={{p.evolve_tool}} width="56" height="56"></strong>
+            {% endif %}
+          {% endfor %}
+        </td>
+        <td id='inside'>
+          <table id='innerchaintable'>
+            {% for p in pokemon.upper_evolve.all %}
+              {% if forloop.counter == 3 %}
+                <tr>
+                  <td class='imgbound'><a href="{% url 'pokemons:pokemon_id' p.pk %}"><img src={{p.evolve_img}} width="128" height="128"></a></td>
+                </tr>
+                <tr>
+                  <td class='namebound'><b>{{p.pokemon_name}}</b></td>
+                </tr>
+              {% endif %}
+            {% endfor %}
+          </table>
+        </td>
+      </tr>
+    </table>
+  {% elif pokemon.pokemon_name == 'Kirlia' %}
+    <table id='specialchaintable'>
+      <tr>
+        <td rowspan="2" id='inside'>
+          <table id='innerchaintable'>
+            <tr>
+              {% for p in pokemon.lower_evolve.all %}
+                {% if forloop.counter == 1 %}
+                  <td class='imgbound'><a href="{% url 'pokemons:pokemon_id' p.pk %}"><img src={{p.evolve_img}} width="128" height="128"></a></td>
+                {% endif %}
+              {% endfor %}
+            </tr>
+            <tr>
+              {% for p in pokemon.lower_evolve.all %}
+                {% if forloop.counter == 1 %}
+                  <td class='namebound'><b>{{p.pokemon_name}}</b></td>
+                {% endif %}
+              {% endfor %}
+            </tr>
+          </table>
+        </td>
+        <td rowspan="2" id='inside'>
+          {% for p in pokemon.lower_evolve.all %}
+            {% if forloop.counter == 1 %}
+              <br>
+              <strong>Level<br>
+              {{p.levelup}}</strong>
+              <br>
+              <br>
+              <br>
+              &#129146;
+            {% endif %}
+          {% endfor %}
+        </td>
+        <td rowspan="2" id='inside'>
+          <table id='innerchaintable'>
+            <tr>
+              <td class='imgbound'><a href="{% url 'pokemons:pokemon_id' pokemon.pk %}"><img src={{pokemon.evolve_img}} width="128" height="128"></a></td>
+            </tr>
+            <tr>
+              <td class='namebound'><b>{{pokemon.pokemon_name}}</b></td>
+            </tr>
+          </table>
+        </td>
+        <td id='inside'>
+          <strong>Level</br>
+          30</br></strong>
+          &#129149;
+        </td>
+        <td id='inside'>
+          <table id='innerchaintable'>
+            {% for p in pokemon.upper_evolve.all %}
+              {% if forloop.counter == 1 %}
+                <tr>
+                  <td class='imgbound'><a href="{% url 'pokemons:pokemon_id' p.pk %}"><img src={{p.evolve_img}} width="128" height="128"></a></td>
+                </tr>
+                <tr>
+                  <td class='namebound'><b>{{p.pokemon_name}}</b></td>
+                </tr>
+              {% endif %}
+            {% endfor %}
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td id='inside'>
+          {% for p in pokemon.upper_evolve.all %}
+            {% if forloop.counter == 2 %}
+              &#129150;<br>
+              <strong>{{p.special_case}}<br>
+              <img src={{p.evolve_tool}} width="56" height="56"></strong>
+            {% endif %}
+          {% endfor %}
+        </td>
+        <td id='inside'>
+          <table id='innerchaintable'>
+            {% for p in pokemon.upper_evolve.all %}
+              {% if forloop.counter == 2 %}
+                <tr>
+                  <td class='imgbound'><a href="{% url 'pokemons:pokemon_id' p.pk %}"><img src={{p.evolve_img}} width="128" height="128"></a></td>
+                </tr>
+                <tr>
+                  <td class='namebound'><b>{{p.pokemon_name}}</b></td>
+                </tr>
+              {% endif %}
+            {% endfor %}
+          </table>
+        </td>
+      </tr>
+    </table>
   {% elif pokemon.lower_evolve.count != 0 and pokemon.upper_evolve.count != 0 %}
     <table id='chaintable' width=450 height=180>
       <tr>
@@ -354,8 +607,11 @@
                   {{p.levelup}}</b></td>
                 {% else %}
                   <td class='textbound'><b>{{pokemon.special_case}}</b></br>
-                    {% if pokemon.pokemon_name == 'Vaporeon' or pokemon.pokemon_name == 'Jolteon' or pokemon.pokemon_name == 'Flareon' or pokemon.pokemon_name == 'Leafeon' or pokemon.pokemon_name == 'Glaceon'%}
+                    {% if pokemon.pokemon_name == 'Vaporeon' or pokemon.pokemon_name == 'Jolteon' or pokemon.pokemon_name == 'Flareon' or pokemon.pokemon_name == 'Leafeon' or pokemon.pokemon_name == 'Glaceon' or pokemon.pokemon_name == 'Gallade' %}
                       <img src={{pokemon.evolve_tool}} width="56" height="56"></td>
+                    {% elif pokemon.pokemon_name == 'Gardevoir' %}
+                      <td class='textbound'><b>Level</br>
+                      {{pokemon.levelup}}</b></td>
                     {% else %}
                       </td>
                     {% endif %}
@@ -448,6 +704,25 @@
     </table>
   {% endif %}
 </div>
+
+
+{% if pokemon.type_idx == 1 %} <button class='btn buttonloc subbgnormal' onclick="goBack()">Back</button>
+{% elif pokemon.type_idx == 2 %} <button class='btn buttonloc subbgground' onclick="goBack()">Back</button>
+{% elif pokemon.type_idx == 3 %} <button class='btn buttonloc subbgdark' onclick="goBack()">Back</button>
+{% elif pokemon.type_idx == 4 %} <button class='btn buttonloc subbgfairy' onclick="goBack()">Back</button>
+{% elif pokemon.type_idx == 5 %} <button class='btn buttonloc subbgpsychic' onclick="goBack()">Back</button>
+{% elif pokemon.type_idx == 6 %} <button class='btn buttonloc subbgghost' onclick="goBack()">Back</button>
+{% elif pokemon.type_idx == 7 %} <button class='btn buttonloc subbgfire' onclick="goBack()">Back</button>
+{% elif pokemon.type_idx == 8 %} <button class='btn buttonloc subbgpoison' onclick="goBack()">Back</button>
+{% elif pokemon.type_idx == 9 %} <button class='btn buttonloc subbggrass' onclick="goBack()">Back</button>
+{% elif pokemon.type_idx == 10 %} <button class='btn buttonloc subbgelectric' onclick="goBack()">Back</button>
+{% elif pokemon.type_idx == 11 %} <button class='btn buttonloc subbgsteel' onclick="goBack()">Back</button>
+{% elif pokemon.type_idx == 12 %} <button class='btn buttonloc subbgwater' onclick="goBack()">Back</button>
+{% elif pokemon.type_idx == 13 %} <button class='btn buttonloc subbgfighting' onclick="goBack()">Back</button>
+{% elif pokemon.type_idx == 14 %} <button class='btn buttonloc subbgflying' onclick="goBack()">Back</button>
+{% elif pokemon.type_idx == 15 %} <button class='btn buttonloc subbgdragon' onclick="goBack()">Back</button>
+{% elif pokemon.type_idx == 16 %} <button class='btn buttonloc subbgice' onclick="goBack()">Back</button>
+{% endif %}
 
 </body>
 {% endblock %}

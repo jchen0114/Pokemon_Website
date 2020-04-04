@@ -20,7 +20,7 @@ class Generation(models.Model):
         return self.generation
 
 class Special(models.Model):
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=25)
     image = models.CharField(max_length=100)
 
     def __str__(self):
@@ -45,8 +45,7 @@ class Pokemon(models.Model):
     evolve_kinds = models.IntegerField()
     region = models.ForeignKey(Region, on_delete=models.CASCADE)
     generation = models.ForeignKey(Generation, on_delete=models.CASCADE)
-    special_forms = models.ManyToManyField(Special, related_name='special')
-
+    special_forms = models.ManyToManyField(Special, related_name='special', blank=True)
 
     def __str__(self):
         return self.pokemon_name
@@ -69,7 +68,7 @@ class Attack(models.Model):
 class Movie(models.Model):
     title = models.CharField(max_length=100)
     release = models.DateField(null=True, blank=True)
-    summary = models.TextField(max_length=1000)
+    summary = models.TextField(max_length=2000)
     number = models.IntegerField()
     pokemon = models.ManyToManyField(Pokemon)
     image = models.CharField(max_length=100)

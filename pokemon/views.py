@@ -1,7 +1,8 @@
 from django.shortcuts import render
 
 # Create your views here.
-from .models import Pokemon, Attack, Type, Movie
+from .models import Pokemon, Attack, Type, Movie, Generation, Region
+
 def index(request):
     pokemon_list = Pokemon.objects.all()
     context = {'pokemons:pokemon_list': 'pokemons:pokemon_list'}
@@ -34,16 +35,7 @@ def singlePokemon(request, id):
     return render(request, 'pokemon/pokemon_detail.html', context=context)
 
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
-from .filters import PokemonFilter, IndexFilter
-
-class IndexSearchListView(ListView):
-    model = Pokemon
-    template_name = 'pokemon/search.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['filter2'] = IndexFilter(self.request.GET, queryset=self.get_queryset())
-        return context
+from .filters import PokemonFilter
 
 
 class SearchListView(ListView):
@@ -62,7 +54,7 @@ class PokemonListView(ListView):
 
     def get_queryset(self):
         top = []
-        li = ['658','448','778','6','197']
+        li = ['658','448','778','6','197','700','445','384','282','94','887','248','1','849','249']
         for i in li:
             top.append(get_object_or_404(Pokemon, number=i))
         return top

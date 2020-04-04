@@ -1,18 +1,38 @@
-.img {
-    margin: 1cm 1cm 1cm 1cm;
-    float: right;
+.nametitle {
+    margin: 0.3cm 0 0.3cm 0;
+    text-align: center;
+    font-size: 40px;
+}
+
+.bound {
+    margin: 0 10% 0 10%;
 }
 
 .maintable {
-    margin: 0.3cm 0.8cm 0 0;
+    margin: 0.3cm 10% 0 0.3cm;
     border-collapse: separate;
     border-spacing: 15px;
     border-radius: 10px;
     text-align: center;
 }
 
+.leftmargin {
+    margin: 0.3cm 0 0 10%;
+}
+
+table, td, th {
+    border: 2px solid black;
+  }
+
+
+.img {
+    margin: 1cm 1cm 1cm 1cm;
+    float: right;
+}
+
 .formtable {
     margin: 0.3cm 0.1cm 0 0.3cm;
+    padding: 0 0.1cm 0 0.1cm;
     border: 1px solid black;
     border-collapse: separate;
     border-spacing: 5px;
@@ -25,16 +45,19 @@
     text-align: center;
 }
 .formname{
-    padding: 0, 0.05cm, 0 0.05cm;
+    padding: 0 0.2cm 0 0.2cm;
     border: 1px solid black;
     border-collapse: separate;
-    border-spacing: 15px;
+    border-spacing: 20px;
     border-radius: 20px;
     text-align: center;
 }
 
-.formname:link, .formname:visited, .formname:hover, .formname:active {text-decoration: underline;}
-
+.formname:link, .formname:visited, .formname:active {text-decoration: underline;}
+.formname:hover {
+    text-decoration: underline;
+    font-weight: bold;
+}
 
 .bgnormal {background-color: rgb(197, 197, 197) !important;}
 .bgground {background-color: rgb(197, 141, 76) !important;}
@@ -52,6 +75,8 @@
 .bgflying {background-color: rgb(161, 229, 238) !important;}
 .bgdragon {background: rgb(35, 156, 236) !important;}
 .bgice {background-color: rgb(138, 197, 224) !important;}
+.bgrock {background-color: rgb(241, 178, 60) !important;}
+.bgbug {background-color: rgb(237, 250, 61) !important;}
 
 .bgname {
     background-color: white !important;
@@ -99,6 +124,7 @@
     border-spacing: 5px;
     border-collapse: separate;
     border-color: white;
+    width: 100%;
 }
 
 .imgbound {
@@ -139,8 +165,11 @@
 .subbgwater {background-color: rgb(187, 218, 247) !important;}
 .subbgfighting {background-color: rgb(247, 166, 119) !important;}
 .subbgflying {background-color: rgb(206, 231, 235) !important;}
-.subbgdragon {background: rgb(144, 196, 231) !important;}
+.subbgdragon {background-color: rgb(144, 196, 231) !important;}
 .subbgice {background-color: rgb(199, 208, 212) !important;}
+.subbgrock {background-color: rgb(241, 213, 150) !important;}
+.subbgbug {background-color: rgb(245, 244, 178) !important;}
+
 
 
 .bnormal {border: 2px solid rgb(197, 197, 197) !important; }
@@ -159,8 +188,53 @@
 .bflying {border: 2px solid rgb(161, 229, 238) !important;}
 .bdragon {border: 2px solid rgb(35, 156, 236) !important;}
 .bice {border: 2px solid rgb(138, 197, 224) !important;}
-
+.brock {border: 2px solid rgb(245, 187, 133) !important;}
+.bbug {border: 2px solid rgb(221, 240, 117) !important;}
 
 .arrow {
     font-size: 20px;
 }
+
+.btn {
+    border: none;
+    background-color: inherit;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.buttonloc {
+    padding: 0.3cm 0.5cm 0.3cm 0.5cm;
+    margin: 1cm 0 0 10%;
+}
+.buttonloc:hover {
+    text-decoration: underline;
+}
+
+
+.tra {
+    border-color: transparent;
+}
+
+
+#innerchaintable {
+    text-align: center;
+    border-color: transparent;
+    border-radius: 10px;
+    border-collapse: separate;
+    border-spacing: 5px;
+}
+
+
+#specialchaintable {
+    text-align: center;
+    border-collapse: separate;
+    border-radius: 10px;
+    border-spacing: 5px;
+}
+
+#inside {
+    border-color: transparent;
+}
+

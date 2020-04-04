@@ -11,7 +11,25 @@
   <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
 </head>
 <body>
-  <div class="container-fluid">
+  <header class='head'>
+    <div class='grid-container'>
+      <a class='header-logo'>Pokémon</a>
+    </div>
+  </header>
+
+  <ul class="topnav">
+    <li><a href="{% url 'home' %}">Home</a></li>
+    <li class="verticalLine"></li>
+    <li><a href="{% url 'pokemons:movie' %}">Movies</a></li>
+    <li class="verticalLine"></li>
+    <li><a href="{% url 'pokemons:pokemon' %}">2019 Top Pokémons</a></li>
+    <li class="verticalLine"></li>
+    <li><a href="{% url 'pokemons:search' %}">Search</a></li>
+  </ul>
+  {% block content %}
+  {% endblock %}
+
+  <!-- <div class="container-fluid">
     <div class="row">
       <div class="col-sm-2">
       {% block sidebar %}
@@ -24,11 +42,10 @@
       {% endblock %}
       </div>
       <div class="col-sm-10 ">
-        {% block content %}
-        {% endblock %}
+   
       </div>
     </div>
-  </div>
+  </div> -->
   
 </body>
 </html>

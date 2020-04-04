@@ -1,35 +1,66 @@
-.sidebar-nav {
-    margin-top: 50px;
-    padding: 0;
-    list-style: none;
-    background-color:gold;
-    font-size: 25px;
-}
-.sticky {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-}
-
-#container {
+.head {
     text-align: center;
-    margin-left:auto;
-    margin-right:auto;
-    border-bottom: white 5px solid;
+    height: 100px;
+    font-size: 60px;
+    background-color: gold;
+    background-image: linear-gradient(rgb(255, 123, 123), white, white);
 }
 
-a:link {color: black;}
-a:visited {color: black;}
-a:hover {color: black;}
-a:active {color: black;}
-
-#title {
-    text-align: center;
-    margin-top: 0.5cm;
-    font-size: 50px;
+.grid-container {
+    margin: 0 auto;
+    max-width: 1220px;
 }
+
+/* .header-logo {
+    display: block;
+    height: 124px;
+    background-image: url(https://drive.google.com/uc?id=1ppyy3GKqdoHySjtflgZKX1TuZyQ-jSNB);
+    background-position: center 0;
+    background-repeat: no-repeat;
+}
+
+@media (min-width: 900px)
+.header-logo {
+    background-image: url(https://drive.google.com/uc?id=1ppyy3GKqdoHySjtflgZKX1TuZyQ-jSNB);
+} */
+
 
 .vl {
     border-left: 6px solid green;
     height: 100%;
+}
+
+
+.verticalLine {
+    border-left: thin solid #ccc;
   }
+
+.topnav {
+    color: black;
+    border:1px solid #ccc;
+    padding: 0.1cm 0 0.1cm 0;
+    margin: 0 25% 0 25%;
+    border-width:1px 0;
+    list-style:none;
+    font-size: 25px;
+    text-align:center;
+}
+
+.topnav li{
+    display:inline;
+    padding: 0 0.1cm 0 0.1cm;
+}
+.topnav a {
+    display:inline-block;
+    padding:10px 10px 10px 10px;
+    text-decoration: none;
+}
+  
+.topnav a:hover {
+    background-color: gold;
+    color: black;
+}
+
+.topnav a:link {color: black;}
+.topnav a:visited {color: black;}
+.topnav a:active {color: black;}

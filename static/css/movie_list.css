@@ -1,13 +1,13 @@
-#title {
+.subtitle {
+    margin: 0.3cm 0 0.3cm 0;
     text-align: center;
-    margin-top: 0.5cm;
-    font-size: 50px;
+    font-size: 40px;
 }
 
 .img {
     /* max-width: 50%; */
-    height: 285px;
-    width: 200px;
+    height: 328px;
+    width: 230px;
     background-size: cover;
 }
 
@@ -17,7 +17,7 @@
 }
   
 .zoom:hover {
-    transform: scale(1.2); 
+    transform: scale(1.1); 
 }
 
 .dist {

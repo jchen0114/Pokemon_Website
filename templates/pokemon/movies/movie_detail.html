@@ -4,18 +4,38 @@
 <head>
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/movie_detail.css' %}">
-    <link rel="Shortcut Icon" href="media/images/pokeball.png" type="image/x-icon">
 </head>
 <body>
-<h1 id='title'>{{movie.title}}</h1>
-<hr>
+<h1 class='subtitle'>{{movie.title}}</h1>
+<hr class='bound'>
 
-<h2>Summary</h2>
-<p class='summary'><img src={{movie.image}} class='img'> {{movie.summary}} </p>
+<p><a onClick="javascript:history.go(-1)" class='leftmargin'>Movie</a> &#8594; {{movie.title}}</p>
+
+<table class='tmp'>
+  <tr>
+    <th>
+      <table>
+        <tr>
+          <th>
+            <img src={{movie.image}} class='img'>
+          </th>
+        </tr>
+        <tr>
+          <td class='date'>
+            Release Date</br>
+            {{movie.release}}
+          </td>
+        </tr>
+      </table>
+    </th>
+  </tr>
+</table>
+
+<h2 class='change'>Summary</h2>
+<p class='leftmargin'>{{movie.summary}}</p>
 
 <h2 class='dist'> Featured Pokémon </h2>
-
-<table>
+<table class='leftmargin'>
   <tr>
     {% for mm in movie.pokemon.all %}
       <td><a href="{% url 'pokemons:pokemon_id' mm.pk %}"><img src={{mm.image}} width="200" height="230" class='pkimg'></a></td>
@@ -27,5 +47,9 @@
     {% endfor %}
   </tr>
 </table>
+
+
+
+<!-- <input type="button" value="Return to previous page" onClick="javascript:history.go(-1)" /> -->
 </body>
 {% endblock %}

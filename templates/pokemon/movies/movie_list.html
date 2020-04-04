@@ -2,17 +2,17 @@
 {% block title %} Movies {% endblock %}
 {% block content %}
 <head>
-  {% load static %}
+  {% load staticfiles %}
   <link rel="stylesheet" type="text/css" href="{% static 'css/movie_list.css' %}">
 </head>
 <body>
-<h1 id='title'> Movies </h1>
-<table style="width:100%" align="center">
+<h1 class='subtitle'> Movies </h1>
+<table style="width:80%" align="center">
   <tr>
     {% for mm in object_list %}
     {% if mm.title == 'Mewtwo Strikes Back' or mm.title == 'The Power of One' or mm.title == 'Spell of the Unown'%}
     <td align="center" class="zoom"><a href="{% url 'pokemons:movie_id' mm.pk %}">
-      <img src="{{mm.image}}" class='img' width="200" height="285"></a></td>
+      <img src="{{mm.image}}" class='img'></a></td>
     {% endif %}
     {% endfor %}
   </tr>
@@ -27,13 +27,28 @@
     {% for mm in object_list %}
     {% if mm.title == 'Celebi - Voice of the Forest' or mm.title == 'Pokémon Heroes- Latios and Latias' or mm.title == 'Jirachi - Wish Maker'%}
     <td align="center" class="zoom"><a href="{% url 'pokemons:movie_id' mm.pk %}">
-      <img src="{{mm.image}}" class='img' width="200" height="285"></a></td>
+      <img src="{{mm.image}}" class='img'></a></td>
     {% endif %}
     {% endfor %}
   </tr>
   <tr>
     {% for mm in object_list %}
     {% if mm.title == 'Celebi - Voice of the Forest' or mm.title == 'Pokémon Heroes- Latios and Latias' or mm.title == 'Jirachi - Wish Maker'%}
+    <td align="center" class="dist"><font size='4'>{{mm.title}}</font></td>
+    {% endif %}
+    {% endfor %}
+  </tr>
+  <tr>
+    {% for mm in object_list %}
+    {% if mm.title == 'Destiny Deoxys' or mm.title == 'Lucario and the Mystery of Mew' or mm.title == 'Pokemon Ranger and the Temple of the Sea'%}
+    <td align="center" class="zoom"><a href="{% url 'pokemons:movie_id' mm.pk %}">
+      <img src="{{mm.image}}" class='img'></a></td>
+    {% endif %}
+    {% endfor %}
+  </tr>
+  <tr>
+    {% for mm in object_list %}
+    {% if mm.title == 'Destiny Deoxys' or mm.title == 'Lucario and the Mystery of Mew' or mm.title == 'Pokemon Ranger and the Temple of the Sea'%}
     <td align="center" class="dist"><font size='4'>{{mm.title}}</font></td>
     {% endif %}
     {% endfor %}

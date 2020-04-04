@@ -1,17 +1,34 @@
-#tt {
-    display: inline; 
-    list-style: none;
-    margin: 0;
-    padding-left: 0;
+.subtitle {
+    margin: 0.3cm 0 0.3cm 0;
+    text-align: center;
+    font-size: 40px;
 }
-.summmary {margin-right: 0.5cm;}
+
+.bound {
+    margin: 0 10% 0 10%;
+}
+
+.leftmargin {
+    margin: 0.3cm 0 0 10%;
+}
+
+.imageprop {
+    display: inline;
+    margin: 0 10% 0 0;
+}
+
+.change {
+    display: inline;
+    margin: 0 10%;
+}
 
 .img {
-    margin-right: 1cm;
-    margin-left: 1cm;
     float: right;
-    width: 200px;
-    height: 290px;
+    width: 230px;
+    height: 328px;
+    display:block;
+    margin: 0 auto;
+
 }
 
 .pkimg {
@@ -19,6 +36,19 @@
     height:auto;
 }
 
+.date {
+    text-align: center;
+}
+
 .dist {
-    margin: 0 0 20px 0;
+    margin: 0.3cm 0 20px 10%;
+}
+
+.tmp {
+    float: right;
+    display: inline;
+    margin: 0 5% auto auto;
+    border-collapse: separate;
+    border-spacing: 15px;
+
 }
