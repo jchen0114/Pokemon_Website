@@ -21,7 +21,7 @@
           <td class='spacing'>
             <table>
               <tr>
-                <th class='ranktitle'>{{pp.rank}}</th>
+                <th class='top3ranktitle'>{{pp.rank}}</th>
                 <th>No.{{pp.number}}</br>{{pp.pokemon_name}}</th>
               </tr>
               <tr>
@@ -36,7 +36,7 @@
         <td class='spacing'>
           <table>
             <tr>
-              <th class='ranktitle'>{{pp.rank}}</th>
+              <th class='top3ranktitle'>{{pp.rank}}</th>
               <th>No.{{pp.number}}</br>{{pp.pokemon_name}}</th>
             </tr>
             <tr>
@@ -51,7 +51,7 @@
           <td class='spacing'>
             <table>
               <tr>
-                <th class='ranktitle'>{{pp.rank}}</th>
+                <th class='top3ranktitle'>{{pp.rank}}</th>
                 <th>No.{{pp.number}}</br>{{pp.pokemon_name}}</th>
               </tr>
               <tr>
@@ -64,14 +64,13 @@
           </td>
         </tr>
       {% endif %} 
-    {% endif %}
-    {% if forloop.counter == 4 or forloop.counter == 5 or forloop.counter == 6 %}
+    {% elif forloop.counter == 4 or forloop.counter == 5 or forloop.counter == 6 %}
       {% if forloop.counter == 4 %}
         <tr>
           <td class='spacing'>
             <table>
               <tr>
-                <th>{{pp.rank}}</th>
+                <th class='ranktitle'>{{pp.rank}}</th>
                 <th>No.{{pp.number}}</br>{{pp.pokemon_name}}</th>
               </tr>
               <tr>
@@ -86,7 +85,7 @@
         <td class='spacing'>
           <table>
             <tr>
-              <th>{{pp.rank}}</th>
+              <th class='ranktitle'>{{pp.rank}}</th>
               <th>No.{{pp.number}}</br>{{pp.pokemon_name}}</th>
             </tr>
             <tr>
@@ -101,7 +100,7 @@
           <td class='spacing'>
             <table>
               <tr>
-                <th>{{pp.rank}}</th>
+                <th class='ranktitle'>{{pp.rank}}</th>
                 <th>No.{{pp.number}}</br>{{pp.pokemon_name}}</th>
               </tr>
               <tr>
@@ -114,14 +113,13 @@
           </td>
         </tr>
       {% endif %} 
-    {% endif %}
-    {% if forloop.counter == 7 or forloop.counter == 8 or forloop.counter == 9 %}
+    {% elif forloop.counter == 7 or forloop.counter == 8 or forloop.counter == 9 %}
       {% if forloop.counter == 7 %}
         <tr>
           <td class='spacing'>
             <table>
               <tr>
-                <th>{{pp.rank}}</th>
+                <th class='ranktitle'>{{pp.rank}}</th>
                 <th>No.{{pp.number}}</br>{{pp.pokemon_name}}</th>
               </tr>
               <tr>
@@ -136,7 +134,7 @@
         <td class='spacing'>
           <table>
             <tr>
-              <th>{{pp.rank}}</th>
+              <th class='ranktitle'>{{pp.rank}}</th>
               <th>No.{{pp.number}}</br>{{pp.pokemon_name}}</th>
             </tr>
             <tr>
@@ -151,7 +149,7 @@
           <td class='spacing'>
             <table>
               <tr>
-                <th>{{pp.rank}}</th>
+                <th class='ranktitle'>{{pp.rank}}</th>
                 <th>No.{{pp.number}}</br>{{pp.pokemon_name}}</th>
               </tr>
               <tr>
@@ -164,6 +162,104 @@
           </td>
         </tr>
       {% endif %} 
+    {% elif forloop.counter == 10 or forloop.counter == 11 or forloop.counter == 12 %}
+      {% if forloop.counter == 10 %}
+        <tr>
+          <td class='spacing'>
+            <table>
+              <tr>
+                <th class='ranktitle'>{{pp.rank}}</th>
+                <th>No.{{pp.number}}</br>{{pp.pokemon_name}}</th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <a href="{% url 'pokemons:pokemon_id' pp.pk %}">
+                    <img src="{{pp.image}}" width="256" height="256" title='{{pp.pokemon_name}}'></a>
+                </td>
+              </tr>
+            </table>
+          </td>
+      {% elif forloop.counter == 11 %}
+        <td class='spacing'>
+          <table>
+            <tr>
+              <th class='ranktitle'>{{pp.rank}}</th>
+              <th>No.{{pp.number}}</br>{{pp.pokemon_name}}</th>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <a href="{% url 'pokemons:pokemon_id' pp.pk %}">
+                  <img src="{{pp.image}}" width="256" height="256" title='{{pp.pokemon_name}}'></a>
+              </td>
+            </tr>
+          </table>
+        </td>
+      {% elif forloop.counter == 12 %}
+          <td class='spacing'>
+            <table>
+              <tr>
+                <th class='ranktitle'>{{pp.rank}}</th>
+                <th>No.{{pp.number}}</br>{{pp.pokemon_name}}</th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <a href="{% url 'pokemons:pokemon_id' pp.pk %}">
+                    <img src="{{pp.image}}" width="256" height="256" title='{{pp.pokemon_name}}'></a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      {% endif %} 
+    {% elif forloop.counter == 13 or forloop.counter == 14 or forloop.counter == 15 %}
+      {% if forloop.counter == 13 %}
+        <tr>
+          <td class='spacing'>
+            <table>
+              <tr>
+                <th class='ranktitle'>{{pp.rank}}</th>
+                <th>No.{{pp.number}}</br>{{pp.pokemon_name}}</th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <a href="{% url 'pokemons:pokemon_id' pp.pk %}">
+                    <img src="{{pp.image}}" width="256" height="256" title='{{pp.pokemon_name}}'></a>
+                </td>
+              </tr>
+            </table>
+          </td>
+      {% elif forloop.counter == 14 %}
+        <td class='spacing'>
+          <table>
+            <tr>
+              <th class='ranktitle'>{{pp.rank}}</th>
+              <th>No.{{pp.number}}</br>{{pp.pokemon_name}}</th>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <a href="{% url 'pokemons:pokemon_id' pp.pk %}">
+                  <img src="{{pp.image}}" width="256" height="256" title='{{pp.pokemon_name}}'></a>
+              </td>
+            </tr>
+          </table>
+        </td>
+      {% elif forloop.counter == 15 %}
+          <td class='spacing'>
+            <table>
+              <tr>
+                <th class='ranktitle'>{{pp.rank}}</th>
+                <th>No.{{pp.number}}</br>{{pp.pokemon_name}}</th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <a href="{% url 'pokemons:pokemon_id' pp.pk %}">
+                    <img src="{{pp.image}}" width="256" height="256" title='{{pp.pokemon_name}}'></a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      {% endif %}
     {% endif %}
   {% endfor %}
 </table>
