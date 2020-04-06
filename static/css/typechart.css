@@ -1,0 +1,121 @@
+.subtitle {
+    margin: 0.3cm 0 0.3cm 0;
+    text-align: center;
+    font-size: 40px;
+}
+
+.type-icon {
+    border-radius: 4px;
+    border: 1px solid rgba(0,0,0,0.2);
+    font-weight: normal;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+    text-transform: uppercase;
+    transition: opacity .4s;
+    width: 10px;
+}
+
+.type-normal {
+    background-color: rgb(160, 160, 156);
+}
+.type-fire {
+    background-color: rgb(250, 94, 67);
+}
+.type-water {
+    background-color: rgb(103, 179, 255);
+}
+.type-fighting {
+    background-color: rgb(221, 96, 92);
+}
+.type-electric {
+    background-color: rgb(255, 206, 59);
+}
+.type-grass {
+    background-color: rgb(146, 243, 107);
+}
+.type-ice {
+    background-color: rgb(154, 216, 247);
+}
+.type-poison {
+    background-color: rgb(206, 94, 168);
+}
+.type-ground {
+    background-color: rgb(233, 199, 98);
+}
+.type-flying {
+    background-color: rgb(168, 180, 248);
+}
+.type-psychic {
+    background-color: rgb(250, 96, 158);
+}
+.type-bug {
+    background-color: rgb(196, 211, 81);
+}
+.type-rock {
+    background-color: rgb(196, 175, 95);
+}
+.type-ghost {
+    background-color: rgb(141, 141, 197);
+}
+.type-dragon {
+    background-color: rgb(139, 122, 247);
+}
+.type-dark {
+    background-color: rgb(175, 152, 140);
+}
+.type-steel {
+    background-color: rgb(137, 137, 168);
+}
+.type-fairy {
+    background-color: rgb(247, 154, 247);
+}
+
+.type-cell {
+    display: block;
+    width: 66px;
+    height: 28px;
+    font-size: 10px;
+    margin-bottom: 0;
+    line-height: 26px;
+}
+
+.type-cell-hor {
+    display: block;
+    width: 50px;
+    height: 28px;
+    font-size: 10px;
+    margin-bottom: 0;
+    line-height: 26px;
+}
+
+.text-loc {
+    text-align: center;
+}
+
+.tt {
+    color: white;
+}
+
+.zero {
+    background-color: black;
+    color: white;
+}
+
+.half {
+    background-color: red;
+    color: white;
+}
+
+.twice {
+    background-color: green;
+    color: white;
+}
+
+table, td, th {
+    border: 1px solid rgb(214, 214, 214);
+}
+
+.text {
+    margin: 0 10% 0 10%;
+}
+

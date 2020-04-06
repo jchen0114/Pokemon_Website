@@ -81,4 +81,8 @@ class MovieDetailView(DetailView):
     model = Movie
     template_name = 'pokemon/movies/movie_detail.html'
 
+class TypeListView(ListView):
+    model = Type
+    template_name = 'pokemon/typechart.html'
+
 

@@ -1,0 +1,428 @@
+{% extends 'base.html' %}
+{% block title %} Pokémon of the Year {% endblock %}
+{% block content %}
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/typechart.css' %}">
+</head>
+
+<h1 class='subtitle'> Type Chart </h1>
+<p class="text">The full type chart here displays the strengths and weaknesses of each type. Look down the left hand side
+     for the attacking type, then move across to see how effective it is against each Pokémon type.</p>
+<p></p>
+<div>
+  <table align="center">
+    <thead class='text-loc'>
+      <tr>
+        <th colspan="2" rowspan="2"></th>
+        <th colspan="18" align="center">Defense Pokémon Types</th>
+      </tr>
+      <tr class='tt'>
+        <td><a class='type-icon type-normal type-cell-hor'><img src="https://drive.google.com/uc?id=1Qo8KuGO8rKga6JzJp4w4dyX321vvzULu" width="25"height="25" title='{{pp.pokemon_name}}'>Nor</a></td>
+        <td><a class='type-icon type-fighting type-cell-hor'><img src="https://drive.google.com/uc?id=1WL3VnbSyMvGplNS2NSfhmBEoxB8OBymc" width="25" height="25" title='{{pp.pokemon_name}}'>Fig</a></td>
+        <td><a class='type-icon type-flying type-cell-hor'><img src="https://drive.google.com/uc?id=16n-SL4r76DF3mEaNI5SHS5w-C3zdyt1C" width="25" height="25" title='{{pp.pokemon_name}}'>Fly</a></td>
+        <td><a class='type-icon type-poison type-cell-hor'><img src="https://drive.google.com/uc?id=1rBiS7IBHMlTyEM4KQ9ydaoQB5QgpZzBC" width="25" height="25" title='{{pp.pokemon_name}}'>Poi</a></td>
+        <td><a class='type-icon type-ground type-cell-hor'><img src="https://drive.google.com/uc?id=12UmGjt6jH5FvudHPS9LCuw10B1AZJO1m" width="25" height="25" title='{{pp.pokemon_name}}'>Gro</a></td>
+        <td><a class='type-icon type-rock type-cell-hor'><img src="https://drive.google.com/uc?id=1OkrlEV8sYGJFUakZZOZdMgRbc7jt_-Ui" width="25" height="25" title='{{pp.pokemon_name}}'>Roc</a></td>
+        <td><a class='type-icon type-bug type-cell-hor'><img src="https://drive.google.com/uc?id=1X8MZiwX-yjY8ckg4xQvWiQC9b_dAN9L9" width="25" height="25" title='{{pp.pokemon_name}}'>Bug</a></td>
+        <td><a class='type-icon type-ghost type-cell-hor'><img src="https://drive.google.com/uc?id=1mLcnwXoyaz2vY4l_Z6vqvEcpAvBjDNFq" width="25" height="25" title='{{pp.pokemon_name}}'>Gho</a></td>
+        <td><a class='type-icon type-steel type-cell-hor'><img src="https://drive.google.com/uc?id=1V9IlXNOXoNlAw4LVYDxgsdmFHwyoYJxs" width="25" height="25" title='{{pp.pokemon_name}}'>Ste</a></td>
+        <td><a class='type-icon type-fire type-cell-hor'><img src="https://drive.google.com/uc?id=1cVPmWAZFnPobaRx35F_Asu2QfwEYGYHK" width="25" height="25" title='{{pp.pokemon_name}}'>Fir</a></td>
+        <td><a class='type-icon type-water type-cell-hor'><img src="https://drive.google.com/uc?id=1ycLCQgwh5YW-17F9aaL7tRLWJLHmJi2k" width="25" height="25" title='{{pp.pokemon_name}}'>Wat</a></td>
+        <td><a class='type-icon type-grass type-cell-hor'><img src="https://drive.google.com/uc?id=1wGXaPTEWJEZog5zyhM_BnfowP_tgHeiM" width="25" height="25" title='{{pp.pokemon_name}}'>Gra</a></td>
+        <td><a class='type-icon type-electric type-cell-hor'><img src="https://drive.google.com/uc?id=1542X0VToPlm3eSLXBhTdXdBcUE0eamiI" width="25" height="25" title='{{pp.pokemon_name}}'>Ele</a></td>
+        <td><a class='type-icon type-psychic type-cell-hor'><img src="https://drive.google.com/uc?id=1RCEbvkvxv7JDeLdmqvtBqiYTcHJNctBP" width="25" height="25" title='{{pp.pokemon_name}}'>Phy</a></td>
+        <td><a class='type-icon type-ice type-cell-hor'><img src="https://drive.google.com/uc?id=1EiqP_wmVdnQ8HIG2itcIkQACu_ODm_at" width="25" height="25" title='{{pp.pokemon_name}}'>Ice</a></td>
+        <td><a class='type-icon type-dragon type-cell-hor'><img src="https://drive.google.com/uc?id=14_L_sZNcYwVvQMXEvzvUmnVPiK6dHho8" width="25" height="25" title='{{pp.pokemon_name}}'>Dra</a></td>
+        <td><a class='type-icon type-dark type-cell-hor'><img src="https://drive.google.com/uc?id=1Vbilby62J5DueJ1xGe7cBTWN1YtIVffi" width="25" height="25" title='{{pp.pokemon_name}}'>Dar</a></td>
+        <td><a class='type-icon type-fairy type-cell-hor'><img src="https://drive.google.com/uc?id=1rHiBO8fNgGvioOacTY34hvhpzNWBwfNi" width="25" height="25" title='{{pp.pokemon_name}}'>Fai</a></td>
+      </tr>
+    </thead>
+    <tbody class='text-loc'>
+      <tr>
+        <td rowspan="18"><strong>A<br>t<br>t<br>a<br>c<br>k<br><br>
+            P<br>o<br>k<br>é<br>m<br>o<br>n<br><br>
+            T<br>y<br>p<br>e</strong></td>
+        <td class='tt'><a class='type-icon type-normal type-cell'>Normal</a></td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td class='half'>1/2x</td>
+        <td>1x</td>
+        <td class='zero'>0x</td>
+        <td class='half'>1/2x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+      </tr>
+      <tr>
+        <td class='tt'><a class='type-icon type-fighting type-cell type-cell'>Fighting</a></td>
+        <td class='twice'>2x</td>
+        <td>1x</td>
+        <td class='half'>1/2x</td>
+        <td class='half'>1/2x</td>
+        <td>1x</td>
+        <td class='twice'>2x</td>
+        <td class='half'>1/2x</td>
+        <td class='zero'>0x</td>
+        <td class='twice'>2x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td class='half'>1/2x</td>
+        <td class='twice'>2x</td>
+        <td>1x</td>
+        <td class='twice'>2x</td>
+        <td class='half'>1/2x</td>
+      </tr>
+      <tr>
+        <td class='tt'><a class='type-icon type-flying type-cell'>Flying</a></td>
+        <td>1x</td>
+        <td class='twice'>2x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td class='half'>1/2x</td>
+        <td class='twice'>2x</td>
+        <td>1x</td>
+        <td class='half'>1/2x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td class='twice'>2x</td>
+        <td class='half'>1/2x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+      </tr>
+      <tr>
+        <td class='tt'><a class='type-icon type-poison type-cell'>Poison</a></td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td class='half'>1/2x</td>
+        <td class='half'>1/2x</td>
+        <td class='half'>1/2x</td>
+        <td>1x</td>
+        <td class='half'>1/2x</td>
+        <td class='zero'>0x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td class='twice'>2x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td class='twice'>2x</td>
+      </tr>
+      <tr>
+        <td class='tt'><a class='type-icon type-ground type-cell'>Ground</a></td>
+        <td>1x</td>
+        <td>1x</td>
+        <td class='zero'>0x</td>
+        <td class='twice'>2x</td>
+        <td>1x</td>
+        <td class='twice'>2x</td>
+        <td class='half'>1/2x</td>
+        <td>1x</td>
+        <td class='twice'>2x</td>
+        <td class='twice'>2x</td>
+        <td>1x</td>
+        <td class='half'>1/2x</td>
+        <td class='twice'>2x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+      </tr>
+      <tr>
+        <td class='tt'><a class='type-icon type-rock type-cell'>Rock</a></td>
+        <td>1x</td>
+        <td class='half'>1/2x</td>
+        <td class='twice'>2x</td>
+        <td>1x</td>
+        <td class='half'>1/2x</td>
+        <td>1x</td>
+        <td class='twice'>2x</td>
+        <td>1x</td>
+        <td class='half'>1/2x</td>
+        <td class='twice'>2x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td class='twice'>2x</td>
+        <td>1x</td>
+        <td>1x</td>
+      </tr>
+      <tr>
+        <td class='tt'><a class='type-icon type-bug type-cell'>Bug</a></td>
+        <td>1x</td>
+        <td class='half'>1/2x</td>
+        <td class='half'>1/2x</td>
+        <td class='half'>1/2x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td class='half'>1/2x</td>
+        <td class='half'>1/2x</td>
+        <td class='half'>1/2x</td>
+        <td>1x</td>
+        <td class='twice'>2x</td>
+        <td>1x</td>
+        <td class='twice'>2x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td class='twice'>2x</td>
+        <td class='half'>1/2x</td>
+      </tr>
+      <tr>
+        <td class='tt'><a class='type-icon type-ghost type-cell'>Ghost</a></td>
+        <td class='zero'>0x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td class='twice'>2x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td class='twice'>2x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td class='half'>1/2x</td>
+        <td>1x</td>
+      </tr>
+      <tr>
+        <td class='tt'><a class='type-icon type-steel type-cell'>Steel</a></td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td class='twice'>2x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td class='half'>1/2x</td>
+        <td class='half'>1/2x</td>
+        <td class='half'>1/2x</td>
+        <td>1x</td>
+        <td class='half'>1/2x</td>
+        <td>1x</td>
+        <td class='twice'>2x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td class='twice'>2x</td>
+      </tr>
+      <tr>
+        <td class='tt'><a class='type-icon type-fire type-cell'>Fire</a></td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td class='half'>1/2x</td>
+        <td class='twice'>2x</td>
+        <td>1x</td>
+        <td class='twice'>2x</td>
+        <td class='half'>1/2x</td>
+        <td class='half'>1/2x</td>
+        <td class='twice'>2x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>2x</td>
+        <td class='half'>1/2x</td>
+        <td>1x</td>
+        <td>1x</td>
+      </tr>
+      <tr>
+        <td class='tt'><a class='type-icon type-water type-cell'>Water</a></td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td class='twice'>2x</td>
+        <td class='twice'>2x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td class='twice'>2x</td>
+        <td class='half'>1/2x</td>
+        <td class='half'>1/2x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td class='half'>1/2x</td>
+        <td>1x</td>
+        <td>1x</td>
+      </tr>
+      <tr>
+        <td class='tt'><a class='type-icon type-grass type-cell'>Grass</a></td>
+        <td>1x</td>
+        <td>1x</td>
+        <td class='half'>1/2x</td>
+        <td class='half'>1/2x</td>
+        <td class='twice'>2x</td>
+        <td class='twice'>2x</td>
+        <td class='half'>1/2x</td>
+        <td>1x</td>
+        <td class='half'>1/2x</td>
+        <td class='half'>1/2x</td>
+        <td class='twice'>2x</td>
+        <td class='half'>1/2x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td class='half'>1/2x</td>
+        <td>1x</td>
+        <td>1x</td>
+      </tr>
+      <tr>
+        <td class='tt'><a class='type-icon type-electric type-cell'>Electric</a></td>
+        <td>1x</td>
+        <td>1x</td>
+        <td class='twice'>2x</td>
+        <td>1x</td>
+        <td class='zero'>0x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td class='twice'>2x</td>
+        <td class='half'>1/2x</td>
+        <td class='half'>1/2x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td class='half'>1/2x</td>
+        <td>1x</td>
+        <td>1x</td>
+      </tr>
+      <tr>
+        <td class='tt'><a class='type-icon type-psychic type-cell'>Physic</a></td>
+        <td>1x</td>
+        <td class='twice'>2x</td>
+        <td>1x</td>
+        <td class='twice'>2x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td class='half'>1/2x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td class='half'>1/2x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td class='zero'>0x</td>
+        <td>1x</td>
+      </tr>
+      <tr>
+        <td class='tt'><a class='type-icon type-ice type-cell'>Ice</a></td>
+        <td>1x</td>
+        <td>1x</td>
+        <td class='twice'>2x</td>
+        <td>1x</td>
+        <td class='twice'>2x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td class='half'>1/2x</td>
+        <td class='half'>1/2x</td>
+        <td class='half'>1/2x</td>
+        <td class='twice'>2x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td class='half'>1/2x</td>
+        <td class='twice'>2x</td>
+        <td>1x</td>
+        <td>1x</td>
+      </tr>
+      <tr>
+        <td class='tt'><a class='type-icon type-dragon type-cell'>Dragon</a></td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td class='half'>1/2x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td class='twice'>2x</td>
+        <td>1x</td>
+        <td class='zero'>0x</td>
+      </tr>
+      <tr>
+        <td class='tt'><a class='type-icon type-dark type-cell'>Dark</a></td>
+        <td>1x</td>
+        <td class='half'>1/2x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td class='twice'>2x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td class='half'>1/2x</td>
+        <td class='half'>1/2x</td>
+      </tr>
+      <tr>
+        <td class='tt'><a class='type-icon type-fairy type-cell'>Fairy</a></td>
+        <td>1x</td>
+        <td class='twice'>2x</td>
+        <td>1x</td>
+        <td class='half'>1/2x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td class='half'>1/2x</td>
+        <td class='half'>1/2x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td>1x</td>
+        <td class='twice'>2x</td>
+        <td class='twice'>2x</td>
+        <td>1x</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+{% endblock %}
