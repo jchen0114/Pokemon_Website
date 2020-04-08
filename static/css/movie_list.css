@@ -23,3 +23,7 @@
 .dist {
     padding: 10px 0 10px 0;
 }
+
+body {
+    padding-bottom: 100px;
+}

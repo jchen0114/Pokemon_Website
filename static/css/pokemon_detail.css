@@ -238,3 +238,6 @@ table, td, th {
     border-color: transparent;
 }
 
+body {
+    padding-bottom: 100px;
+}
