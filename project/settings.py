@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'pokemon.apps.PokemonConfig',
     'django_filters',
     'bootstrapform',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

@@ -2,12 +2,6 @@ from django.shortcuts import render
 
 # Create your views here.
 from .models import Pokemon, Attack, Type, Movie, Generation, Region
-
-def index(request):
-    pokemon_list = Pokemon.objects.all()
-    context = {'pokemons:pokemon_list': 'pokemons:pokemon_list'}
-    return render(request, 'pokemon/names.html', context = context)
-
 from .forms import PokemonForm, RawPokemonForm, PokemonModelForm
 
 def pokemon_create_view(request):
@@ -26,17 +20,8 @@ def pokemon_create_view(request):
     return render(request, "pokemon/pokemon_create.html", context=context)
 
 from django.shortcuts import get_object_or_404
-
-def singlePokemon(request, id):
-    pokemon_list = get_object_or_404(Pokemon, id=id)
-    context = {
-        'pokemon_list' : pokemon_list
-    }
-    return render(request, 'pokemon/pokemon_detail.html', context=context)
-
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from .filters import PokemonFilter
-
 
 class SearchListView(ListView):
     model = Pokemon
@@ -84,5 +69,4 @@ class MovieDetailView(DetailView):
 class TypeListView(ListView):
     model = Type
     template_name = 'pokemon/typechart.html'
-
 

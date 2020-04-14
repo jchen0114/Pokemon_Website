@@ -85,7 +85,6 @@ from django.contrib import admin
 @admin.register(Pokemon)
 class PokemonAdmin(admin.ModelAdmin):
     list_display = ['id', 'pokemon_name', 'number', 'region']
-    serach_fields = ('pokemon_name',)
 
 @admin.register(Type)
 class TypeAdmin(admin.ModelAdmin):
@@ -114,3 +113,4 @@ class GenerationAdmin(admin.ModelAdmin):
 @admin.register(Special)
 class SpecialAdmin(admin.ModelAdmin):
     list_display = ['name']
+
