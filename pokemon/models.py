@@ -109,7 +109,6 @@ class RegionAdmin(admin.ModelAdmin):
 class GenerationAdmin(admin.ModelAdmin):
     list_diplay = ['id', 'generation']
 
-
 @admin.register(Special)
 class SpecialAdmin(admin.ModelAdmin):
     list_display = ['name']
