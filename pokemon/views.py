@@ -70,3 +70,7 @@ class TypeListView(ListView):
     model = Type
     template_name = 'pokemon/typechart.html'
 
+
+class TestFilterView(ListView):
+    model = Pokemon
+    template_name = 'test.html'

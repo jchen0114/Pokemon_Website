@@ -68,6 +68,21 @@
     {% endif %}
     {% endfor %}
   </tr>
+  <tr>
+    {% for mm in object_list %}
+    {% if mm.title == 'Zoroark - Master of Illusions' or mm.title == 'White - Victini and Zekrom / Black - Victini and Reshiram' or mm.title == 'Kyurem VS the Sword of Justice'%}
+    <td align="center" class="zoom"><a href="{% url 'pokemons:movie_id' mm.pk %}">
+      <img src="{{mm.image}}" class='img'></a></td>
+    {% endif %}
+    {% endfor %}
+  </tr>
+  <tr>
+    {% for mm in object_list %}
+    {% if mm.title == 'Zoroark - Master of Illusions' or mm.title == 'White - Victini and Zekrom / Black - Victini and Reshiram' or mm.title == 'Kyurem VS the Sword of Justice'%}
+    <td align="center" class="dist"><font size='4'>{{mm.title}}</font></td>
+    {% endif %}
+    {% endfor %}
+  </tr>
 </table>
 
 <p></p>

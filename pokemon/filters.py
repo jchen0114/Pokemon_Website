@@ -26,4 +26,4 @@ class PokemonFilter(django_filters.FilterSet):
         super(PokemonFilter, self).__init__(*args, **kwargs)
         # at sturtup user doen't push Submit button, and QueryDict (in data) is empty
         if self.data == {}:
-            self.queryset = self.queryset.none()
+            self.queryset = self.queryset.order_by('number')
