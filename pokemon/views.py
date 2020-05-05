@@ -60,11 +60,11 @@ class PokemonUpdateView(UpdateView):
 
 class MovieListView(ListView):
     model = Movie
-    template_name = 'pokemon/movies/movie_list.html'
+    template_name = 'movies/movie_list.html'
 
 class MovieDetailView(DetailView):
     model = Movie
-    template_name = 'pokemon/movies/movie_detail.html'
+    template_name = 'movies/movie_detail.html'
 
 class TypeListView(ListView):
     model = Type
@@ -74,3 +74,4 @@ class TypeListView(ListView):
 class TestFilterView(ListView):
     model = Pokemon
     template_name = 'test.html'
+

@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+{% block title %} Search for your Pokémon!! {% endblock %}
+{% block content %}
+<head>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/search.css' %}">
+</head>
+<body>
+<h1 class='subtitle'> Search for your Pokémon!! </h1>
+
+  
+<div class="search-size container">
+  <form method="GET">
+    {{ filter.form.pokemon_name | bootstrap}}
+    <h2 class="collapsible" onclick="change('Advance Search', 'collapse')">Advance Search</h2>
+      <div class="content">
+        {{ filter.form.number | bootstrap}}
+        {{ filter.form.types | bootstrap}}
+        {{ filter.form.generation | bootstrap}}
+      </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+  </form>
+</div>
+
+<div class='container image-size'>
+  <table class='center'>
+    <tr>
+      {% for p in filter.qs %}
+        <td>
+          <table class='center'>
+            <tr>
+              <td class='center'>
+                <a href="{% url 'pokemons:pokemon_id' p.pk %}"><img src="{{p.image}}" width="128" height="128"></a>
+              </td>
+            </tr>
+            <tr>
+              <th class='textcenter'>
+                {{p.number}}. {{p.pokemon_name}}
+              </th>
+            </tr>
+          </table>
+        </td>
+        {% if forloop.counter == 5 or forloop.counter == 10 or forloop.counter == 15 or forloop.counter == 20 %}
+        </tr>
+        <tr>
+        {% elif forloop.counter == 25 or forloop.counter == 30 or forloop.counter == 35 or forloop.counter == 40 %}
+        </tr>
+        <tr>
+        {% elif forloop.counter == 45 or forloop.counter == 50 or forloop.counter == 55 or forloop.counter == 60 %}
+        </tr>
+        <tr>
+        {% elif forloop.counter == 65 or forloop.counter == 70 or forloop.counter == 75 or forloop.counter == 80 %}
+        </tr>
+        <tr>
+        {% elif forloop.counter == 85 or forloop.counter == 90 or forloop.counter == 95 or forloop.counter == 100 %}
+        </tr>
+        <tr>
+        {% elif forloop.counter == 105 or forloop.counter == 110 or forloop.counter == 115 or forloop.counter == 120 %}
+        </tr>
+        <tr>
+        {% endif %}
+      {% endfor %}
+    </tr>
+  </table>
+</div>
+
+<script>
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  }
+
+  function change(name, x) {
+    document.getElementById(name).innerHTML = x;
+  }
+</script>
+</body>
+{% endblock content %}
