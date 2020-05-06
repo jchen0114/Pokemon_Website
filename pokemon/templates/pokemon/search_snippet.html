@@ -1,55 +1,54 @@
 {% if pokemon_name and query %}
-    <div class="container">
-        <div class="row">
-            <div class="card m-auto">
-                <div class="card-body mt-2 mb-2">
-                    <h2 class="card-title">Below is the result of search: "{{query}}"</h2>
-                    <table>
-                        <tr>
-                            {% for p in pokemon_name %}
-                                <td>
-                                    <table>
-                                        <tr>
-                                        <td>
-                                            <a href="{% url 'pokemons:pokemon_id' p.pk %}"><img src="{{p.image}}" width="128" height="128"></a>
-                                        </td>
-                                        </tr>
-                                        <tr>
-                                        <th>
-                                            {{p.number}}. {{p.pokemon_name}}
-                                        </th>
-                                        </tr>
-                                    </table>
-                                </td>
-                                    {% if forloop.counter == 7 or forloop.counter == 14 or forloop.counter == 21 or forloop.counter == 28 %}
-                                </tr>
-                                <tr>
-                                    {% elif forloop.counter == 35 or forloop.counter == 42 or forloop.counter == 49 or forloop.counter == 56 %}
-                                </tr>
-                                <tr>
-                                    {% elif forloop.counter == 63 or forloop.counter == 70 or forloop.counter == 77 or forloop.counter == 84 %}
-                                </tr>
-                                <tr>
-                                    {% elif forloop.counter == 91 or forloop.counter == 98 or forloop.counter == 105 or forloop.counter == 112 %}
-                                </tr>
-                                {% endif %}
-                            {% endfor %}
-                        </tr>
-                    </table>
-                </div>
-            </div>
+  <div class="container">
+    <div class="row">
+      <div class="m-auto">
+        <div class="mt-2 mb-2">
+          <h2 class="card-title">Below is the result of search: "{{query}}"</h2>
+          <table>
+            <tr>
+              {% for p in pokemon_name %}
+                <td>
+                  <table>
+                    <tr>
+                      <td>
+                        <a href="{% url 'pokemons:pokemon_id' p.pk %}"><img src="{{p.image}}" width="128" height="128"></a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        {{p.number}}. {{p.pokemon_name}}
+                      </th>
+                    </tr>
+                  </table>
+                </td>
+                {% if forloop.counter == 7 or forloop.counter == 14 or forloop.counter == 21 or forloop.counter == 28 %}
+                  </tr>
+                  <tr>
+                {% elif forloop.counter == 35 or forloop.counter == 42 or forloop.counter == 49 or forloop.counter == 56 %}
+                  </tr>
+                  <tr>
+                {% elif forloop.counter == 63 or forloop.counter == 70 or forloop.counter == 77 or forloop.counter == 84 %}
+                  </tr>
+                  <tr>
+                {% elif forloop.counter == 91 or forloop.counter == 98 or forloop.counter == 105 or forloop.counter == 112 %}
+                  </tr>
+                {% endif %}
+              {% endfor %}
+            </tr>
+          </table>
         </div>
+      </div>
     </div>
+  </div>
 {% else %}
-<div class="container">
-	<div class="row">
-		<div class="card m-auto">
-			<div class="card-body mt-2 mb-2">
-                <h2 class="card-title">No results</h2>
-				<p class="card-text">There were no results matching the search: "{{query}}"</p>
-			</div>
-		</div>
-	</div>
-</div>
-
+  <div class="container">
+    <div class="row">
+      <div class="card m-auto">
+        <div class="card-body mt-2 mb-2">
+          <h2 class="card-title">No results</h2>
+          <p class="card-text">There were no results matching the search: "{{query}}"</p>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endif %}
