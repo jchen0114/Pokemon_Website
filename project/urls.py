@@ -15,16 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.views.generic.base import TemplateView
 from pokemon.views import home_screen_view
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from . import settings
 from django.conf.urls.static import static
+from pokemon import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('pokemon/', include('pokemon.urls', namespace='s-pokemons')),
-    path('', home_screen_view, name='home'),
+    path('', views.home_screen_view, name='home'),
     path('accounts/', include('django.contrib.auth.urls')),
     # path('register/', register, name='register'),
 ]

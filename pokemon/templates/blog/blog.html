@@ -1,0 +1,31 @@
+{% load static %}
+<style type="text/css">
+	.card{
+		max-width: 700px;
+		width: 100%;
+	}
+	.card-body{
+		padding: 20px;
+    }
+</style>
+{% for blog in blogs %}
+    <div class="container">
+        <div class="row">
+            <!-- Blog Post -->
+            <div class="card m-auto">
+                <a href="{% url 'pokemons:blog_id' blog.pk %}">
+                    <img class="card-img-top" src="{{ blog.image }}">
+                </a>
+                <div class="card-body mt-2 mb-2">
+                    <a>
+                        <h2 class="card-title">{{blog.title}}</h2>
+                    </a>
+                    <p class="card-text">{{blog.body|safe|truncatechars:200}}</p>
+                </div>
+                <div class="card-footer text-muted">
+                    <p>Updated on {{blog.date_updated}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}

@@ -1,5 +1,5 @@
 from django import forms
-from .models import Pokemon, Attack, Type
+from .models import Pokemon, Attack, Type, BlogPost
 
 class PokemonForm(forms.ModelForm):
     class Meta:
@@ -19,3 +19,4 @@ class PokemonModelForm(forms.ModelForm):
             'number': 'number',
             'types': 'types',
         }
+

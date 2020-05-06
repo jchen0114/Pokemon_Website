@@ -13,40 +13,12 @@
       {% include 'pokemon/search_snippet.html' with query=query %}
     {% endif %}
   {% endif %}
-  <p class='textcenter'>Welcome to my website where I will show past pokémon movie summaries and show special pokémons that 
-  appears in them.</p>
-  <img src="https://drive.google.com/uc?id=1HL6SLQQryG--cBJj5wMGWQ9jgXacxfcs" alt="Pokemon Coco Poster" class="center">
-  <p class='textcenter'><strong>The lastest pokémon movie - Coco is set to release on July, 10, 2020. (Japan)</strong></p>
-    <iframe width="622" height="350" src="https://www.youtube.com/embed/tPpXk-76Ijs?controls=0" 
-    frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" 
-    allowfullscreen class="videocenter"></iframe>    
-    <p class='textcenter'>Although Coco is human, she acts like pokémons and see them as family. Her background came across to
-    the Mythical Pokémon, <strong>Celebi</strong>. However the peaceful forest suddenly got attacked by unknown, as
-    pokémons faces crisis once again, it also brings up the problem between human and pokémon nature.</p>
-    <p class='textcenter'> Some newly appear pokémon including <strong><span class='green'>Zarude</span></strong> and for the 
-    first time <strong><span class='pink'>shiny Celebi</span></strong>.</p>
-
-  <table class="tb">
-    <tr>
-      <td>
-        <figure>
-          <img src="https://drive.google.com/uc?id=1S94SsBZzvptLQryalgV1lSsfnrDMG6J3" alt="Celebi" style="width:100%">
-          <figcaption class='caption'><strong>Shiny Celebi</strong></figcaption>
-        </figure>
-      </td>
-      <td>
-        <figure>
-          <img src="https://drive.google.com/uc?id=13K1VJTaCcL4zX4RWNlTXfClGiQUCXylr" alt="Zarude" style="width:100%">
-          <figcaption class='caption'><strong>Zarude</strong></figcaption>
-        </figure>
-      </td>
-    </tr>
-  </table>
+  
+  <h5 class='textcenter'>Welcome to my website where I will show past pokémon movie summaries and show special pokémons that 
+  appears in them.</h5>
 
 
-  <img src="https://drive.google.com/uc?id=1UykfHQC4CRHkPyzYJ_kR_iz55_pVuZmj" alt="Pokemon Coco Poster" class="center" style="width:50%">
-  <p></p>
-
-
+	{% include 'blog/blog.html' with blogs=blogs %}
+					
 </body>
 {% endblock %}

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Pokemon, Attack, Type, Movie, Generation, Region
+from .models import Pokemon, Attack, Type, Movie, Generation, Region, BlogPost
 from .forms import PokemonForm, RawPokemonForm, PokemonModelForm
 
 def pokemon_create_view(request):
@@ -48,7 +48,6 @@ class PokemonDetailView(DetailView):
 
 class PokemonCreateView(CreateView):
     form_class = PokemonModelForm
-    # fields = '__all__'
     template_name = 'pokemon/pokemon_create.html'
 
 class PokemonUpdateView(UpdateView):
@@ -68,13 +67,44 @@ class TypeListView(ListView):
     model = Type
     template_name = 'pokemon/typechart.html'
 
-
 class TestFilterView(ListView):
     model = Pokemon
     template_name = 'test.html'
 
+class BlogPostView(ListView):
+    model = BlogPost
+    template_name = 'blog/blog.html'
+    context_object_name = 'blog_list'
+ 
+class BlogPostDetailView(DetailView):
+    model = BlogPost
+    template_name = 'blog/blog_detail.html'
+    context_object_name = 'blog'
+
+
 from django.db.models import Q
 from operator import attrgetter
+
+class HomeView(ListView):
+    model = Pokemon
+    template_name = 'home.html'
+
+    def get_context_data(self, **kwargs):
+        ctx = super(HomeView, self).get_context_data(**kwargs)
+        ctx['blogs'] = BlogPost.objects.all()
+        
+        return ctx
+
+    def get(self, request):
+        context = {}
+        query = ''
+        if request.GET:
+            query = request.GET.get('q','')
+            context['query'] = str(query)
+            pokemon_name = sorted(get_pokemon_queryset(query), key=attrgetter('number'))
+            context['pokemon_name'] = pokemon_name
+        return render(request, "home.html", context)
+
 
 def home_screen_view(request):
     query = ""
@@ -86,6 +116,8 @@ def home_screen_view(request):
         pokemon_name = sorted(get_pokemon_queryset(query), key=attrgetter('number'))
         context['pokemon_name'] = pokemon_name
     
+    context['blogs'] = BlogPost.objects.all()
+
     return render(request, "home.html", context)
 
 
@@ -103,6 +135,6 @@ def get_pokemon_queryset(query=None):
                 Q(pokemon_name__icontains=q)).distinct()
             for p in pokemons:
                 queryset.append(p)        
-    print(queryset)
 
     return list(set(queryset))
+
