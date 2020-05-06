@@ -85,6 +85,7 @@ def home_screen_view(request):
         context['query'] = str(query)
         pokemon_name = sorted(get_pokemon_queryset(query), key=attrgetter('number'))
         context['pokemon_name'] = pokemon_name
+    
     return render(request, "home.html", context)
 
 
@@ -92,9 +93,16 @@ def get_pokemon_queryset(query=None):
     queryset = []
     queries = query.split(" ") # python install 2019 = [python, install, 2019]
     for q in queries:
-        pokemons = Pokemon.objects.filter(
-            Q(number=q) | Q(pokemon_name__icontains=q)).distinct()
-        for p in pokemons:
-            queryset.append(p)
-    
+        if q.isdigit():
+            pokemons = Pokemon.objects.filter(
+            Q(number=q)).distinct()
+            for p in pokemons:
+                queryset.append(p)
+        else:
+            pokemons = Pokemon.objects.filter(
+                Q(pokemon_name__icontains=q)).distinct()
+            for p in pokemons:
+                queryset.append(p)        
+    print(queryset)
+
     return list(set(queryset))
