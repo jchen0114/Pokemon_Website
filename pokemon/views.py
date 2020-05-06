@@ -1,6 +1,4 @@
 from django.shortcuts import render
-
-# Create your views here.
 from .models import Pokemon, Attack, Type, Movie, Generation, Region
 from .forms import PokemonForm, RawPokemonForm, PokemonModelForm
 
@@ -75,3 +73,28 @@ class TestFilterView(ListView):
     model = Pokemon
     template_name = 'test.html'
 
+from django.db.models import Q
+from operator import attrgetter
+
+def home_screen_view(request):
+    query = ""
+    context = {}
+
+    if request.GET:
+        query = request.GET.get('q','')
+        context['query'] = str(query)
+        pokemon_name = sorted(get_pokemon_queryset(query), key=attrgetter('number'))
+        context['pokemon_name'] = pokemon_name
+    return render(request, "home.html", context)
+
+
+def get_pokemon_queryset(query=None):
+    queryset = []
+    queries = query.split(" ") # python install 2019 = [python, install, 2019]
+    for q in queries:
+        pokemons = Pokemon.objects.filter(
+            Q(number=q) | Q(pokemon_name__icontains=q)).distinct()
+        for p in pokemons:
+            queryset.append(p)
+    
+    return list(set(queryset))

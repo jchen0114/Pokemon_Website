@@ -7,7 +7,13 @@
 </head>
 <body>
 <h1 class='subtitle'> Pokémon of the Year </h1>
-
+{% if pokemon_name %}
+  {% include 'pokemon/search_snippet.html' with pokemon_name=pokemon_name query=query %}
+{% else %}
+  {% if query %}
+    {% include 'pokemon/search_snippet.html' with query=query %}
+  {% endif %}
+{% endif %}
 <table class='tb'>
   <tr>
     <th class='ranktitle'>Top 15</th>
