@@ -14,9 +14,8 @@
 {% endif %}
 
 <h1 class='subtitle'> Type Chart </h1>
-<p class="text">The full type chart here displays the strengths and weaknesses of each type. Look down the left hand side
-     for the attacking type, then move across to see how effective it is against each Pokémon type.</p>
-<p></p>
+<h5 align="center" style="margin: 0 15% 0 15%;">The full type chart here displays the strengths and weaknesses of each type. Look down the left hand side
+     for the attacking type, then move across to see how effective it is against each Pokémon type.</h5><br>
 <div>
   <table align="center">
     <thead class='text-loc'>
@@ -428,28 +427,23 @@
         <td>1x</td>
       </tr>
     </tbody>
+  </table><br>
+  <h3 align="center">Chart Key</h3>
+  <table align="center">
+    <tr>
+      <th class='zero'>0x</th>
+      <th>No effect(0%)</th>
+      <th class='half'>1/2x</th>
+      <th>Not very effect(50%)</th>
+      <th>1x</th>
+      <th>Normal effect(100%)</th>
+      <th class='twice'>0x</th>
+      <th>Super-effective(200%)</th>
+    </tr>
   </table>
 </div>
 
-<h3 class='text'>Chart Key</h3>
-<table class='text'>
-  <tr>
-    <th class='zero'>0x</th>
-    <th>No effect(0%)</th>
-  </tr>
-  <tr>
-    <th class='half'>1/2x</th>
-    <th>Not very effect(50%)</th>
-  </tr>
-  <tr>
-    <th>1x</th>
-    <th>Normal effect(100%)</th>
-  </tr>
-  <tr>
-    <th class='twice'>0x</th>
-    <th>Super-effective(200%)</th>
-  </tr>
-</table>
+
 
 
 {% endblock %}

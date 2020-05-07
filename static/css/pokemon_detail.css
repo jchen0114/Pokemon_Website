@@ -116,14 +116,14 @@ table, td, th {
 }
 
 #insideframe {
-    border-color: white;
+    border-color: transparent;
 }
 
 #imgtable {
     border-radius: 20px;
     border-spacing: 5px;
     border-collapse: separate;
-    border-color: white;
+    border-color: transparent;
     width: 100%;
 }
 
@@ -135,13 +135,13 @@ table, td, th {
 #nametable {
     border-radius: 20px;
     border-collapse: separate;
-    border-color: white;
+    border-color: transparent;
     table-layout: fixed;
     width: 100%;
 }
 
 .textbound {
-    border-color: white;
+    border-color: transparent;
     text-align: center;
 }
 
@@ -234,10 +234,10 @@ table, td, th {
     border-spacing: 5px;
 }
 
-#inside {
-    border-color: transparent;
-}
-
 body {
     padding-bottom: 100px;
+}
+
+#transparent {
+    border-color: transparent;
 }

@@ -31,7 +31,13 @@
 			  <p class="card-text">{{ blog.body|safe }}</p>
 			</div>
 			<div class="card-footer text-muted">
-			  Updated on {{ blog.date_updated }}
+				<p>Featured Pokemon(s):
+					{% for p in blog.pokemon.all %}
+						<a href="{% url 'pokemons:pokemon_id' p.pk %}">{{ p }}</a>
+						{% if forloop.counter != blog.pokemon.count %}
+							,
+						{% endif %}
+					{% endfor %}</p>
 			</div>
 		</div>
 	</div>

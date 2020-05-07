@@ -1,14 +1,19 @@
 <style type="text/css">
     .table, tr, td, th {
-        border: transparent;
-    } 
+        border-color: transparent;
+    }
+
+    .card {
+      margin: 50px 0 50px 0;
+    }
 </style>
+
 {% if pokemon_name and query %}
   <div class="container">
     <div class="row">
       <div class="m-auto">
         <div class="mt-2 mb-2">
-          <h2 class="card-title">Below is the result of search: "{{query}}"</h2>
+          <h4 class="card-title">Below is the result of search: "{{query}}"</h4>
           <table>
             <tr>
               {% for p in pokemon_name %}
@@ -21,7 +26,7 @@
                     </tr>
                     <tr>
                       <th>
-                        {{p.number}}. {{p.pokemon_name}}
+                        <p>{{p.number}}. {{p.pokemon_name}}</p>
                       </th>
                     </tr>
                   </table>
