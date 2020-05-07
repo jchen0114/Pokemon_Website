@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Pokemon, Attack, Type, Movie, Generation, Region, BlogPost
+from .models import Pokemon, Attack, Type, Movie, Generation, Region, Blog
 from .forms import PokemonForm, RawPokemonForm, PokemonModelForm
 
 def pokemon_create_view(request):
@@ -41,7 +41,6 @@ class PokemonListView(ListView):
         li = ['658','448','778','6','197','700','445','384','282','94','887','248','1','849','249']
         for i in li:
             top.append(get_object_or_404(Pokemon, number=i))
-        print(top)
         return top
     
     def get(self, request):
@@ -100,7 +99,6 @@ class MovieListView(ListView):
             pokemon_name = sorted(get_pokemon_queryset(query), key=attrgetter('number'))
             context['pokemon_name'] = pokemon_name
         context['movies'] = Movie.objects.all()
-        print(context)
         return render(request, self.template_name, context)
 
 class MovieDetailView(DetailView):
@@ -136,12 +134,13 @@ class TypeListView(ListView):
         return render(request, self.template_name, context)
 
 
-class BlogPostView(ListView):
-    model = BlogPost
+class BlogView(ListView):
+    model = Blog
     template_name = 'blog/blog.html'
     context_object_name = 'blog_list'
+
  
-class BlogPostDetailView(DetailView):
+class BlogDetailView(DetailView):
     template_name = 'blog/blog_detail.html'
 
     def get(self, request, pk):
@@ -153,7 +152,7 @@ class BlogPostDetailView(DetailView):
             context['query'] = str(query)
             pokemon_name = sorted(get_pokemon_queryset(query), key=attrgetter('number'))
             context['pokemon_name'] = pokemon_name
-        context['blog'] = BlogPost.objects.all()[pk-1]
+        context['blog'] = Blog.objects.all()[pk-1]
         return render(request, self.template_name, context)
         
 
@@ -193,7 +192,7 @@ def home_screen_view(request):
         pokemon_name = sorted(get_pokemon_queryset(query), key=attrgetter('number'))
         context['pokemon_name'] = pokemon_name
     
-    context['blogs'] = BlogPost.objects.all()
+    context['blogs'] = Blog.objects.all().order_by('-id')
 
     return render(request, "home.html", context)
 

@@ -27,6 +27,6 @@ urlpatterns = [
     path('movie/<int:pk>/', views.MovieDetailView.as_view(), name='movie_id'),
     path('search/', views.SearchListView.as_view(), name='search'),
     path('type/', views.TypeListView.as_view(), name='type'),
-    path('blog/<int:pk>/', views.BlogPostDetailView.as_view(), name='blog_id'),
+    path('blog/<int:pk>/', views.BlogDetailView.as_view(), name='blog_id'),
 ]
 
