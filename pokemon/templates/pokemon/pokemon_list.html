@@ -6,7 +6,6 @@
   <link rel="stylesheet" type="text/css" href="{% static 'css/pokemon_list.css' %}">
 </head>
 <body>
-<h1 class='subtitle'> Pokémon of the Year </h1>
 {% if pokemon_name %}
   {% include 'pokemon/search_snippet.html' with pokemon_name=pokemon_name query=query %}
 {% else %}
@@ -14,13 +13,14 @@
     {% include 'pokemon/search_snippet.html' with query=query %}
   {% endif %}
 {% endif %}
+<h1 class='subtitle'> Pokémon of the Year </h1>
 <table class='tb'>
   <tr>
     <th class='ranktitle'>Top 15</th>
     <th></th>
     <th></th>
   </tr>
-  {% for pp in object_list %}
+  {% for pp in pokemon %}
     {% if forloop.counter == 1 or forloop.counter == 2 or forloop.counter == 3 %}
       {% if forloop.counter == 1 %}
         <tr>

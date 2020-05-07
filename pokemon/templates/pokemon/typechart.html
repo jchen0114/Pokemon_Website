@@ -5,6 +5,13 @@
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/typechart.css' %}">
 </head>
+{% if pokemon_name %}
+  {% include 'pokemon/search_snippet.html' with pokemon_name=pokemon_name query=query %}
+{% else %}
+  {% if query %}
+    {% include 'pokemon/search_snippet.html' with query=query %}
+  {% endif %}
+{% endif %}
 
 <h1 class='subtitle'> Type Chart </h1>
 <p class="text">The full type chart here displays the strengths and weaknesses of each type. Look down the left hand side

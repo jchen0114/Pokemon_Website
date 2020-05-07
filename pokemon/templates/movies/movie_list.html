@@ -6,10 +6,17 @@
   <link rel="stylesheet" type="text/css" href="{% static 'css/movie_list.css' %}">
 </head>
 <body>
+{% if pokemon_name %}
+  {% include 'pokemon/search_snippet.html' with pokemon_name=pokemon_name query=query %}
+{% else %}
+  {% if query %}
+    {% include 'pokemon/search_snippet.html' with query=query %}
+  {% endif %}
+{% endif %}
 <h1 class='subtitle'> Movies </h1>
 <table align="center">
   <tr>
-    {% for mm in object_list %}
+    {% for mm in movies %}
     {% if mm.title == 'Mewtwo Strikes Back' or mm.title == 'The Power of One' or mm.title == 'Spell of the Unown'%}
     <td align="center" class="zoom test"><a href="{% url 'pokemons:movie_id' mm.pk %}">
       <img src="{{mm.image}}" class='img'></a></td>
@@ -17,14 +24,14 @@
     {% endfor %}
   </tr>
   <tr>
-    {% for mm in object_list %}
+    {% for mm in movies %}
     {% if mm.title == 'Mewtwo Strikes Back' or mm.title == 'The Power of One' or mm.title == 'Spell of the Unown'%}
     <td align="center" class="dist"><font size='4'>{{mm.title}}</font></td>
     {% endif %}
     {% endfor %}
   </tr>
   <tr>
-    {% for mm in object_list %}
+    {% for mm in movies %}
     {% if mm.title == 'Celebi - Voice of the Forest' or mm.title == 'Pokémon Heroes- Latios and Latias' or mm.title == 'Jirachi - Wish Maker'%}
     <td align="center" class="zoom"><a href="{% url 'pokemons:movie_id' mm.pk %}">
       <img src="{{mm.image}}" class='img'></a></td>
@@ -32,14 +39,14 @@
     {% endfor %}
   </tr>
   <tr>
-    {% for mm in object_list %}
+    {% for mm in movies %}
     {% if mm.title == 'Celebi - Voice of the Forest' or mm.title == 'Pokémon Heroes- Latios and Latias' or mm.title == 'Jirachi - Wish Maker'%}
     <td align="center" class="dist"><font size='4'>{{mm.title}}</font></td>
     {% endif %}
     {% endfor %}
   </tr>
   <tr>
-    {% for mm in object_list %}
+    {% for mm in movies %}
     {% if mm.title == 'Destiny Deoxys' or mm.title == 'Lucario and the Mystery of Mew' or mm.title == 'Pokemon Ranger and the Temple of the Sea'%}
     <td align="center" class="zoom"><a href="{% url 'pokemons:movie_id' mm.pk %}">
       <img src="{{mm.image}}" class='img'></a></td>
@@ -47,14 +54,14 @@
     {% endfor %}
   </tr>
   <tr>
-    {% for mm in object_list %}
+    {% for mm in movies %}
     {% if mm.title == 'Destiny Deoxys' or mm.title == 'Lucario and the Mystery of Mew' or mm.title == 'Pokemon Ranger and the Temple of the Sea'%}
     <td align="center" class="dist"><font size='4'>{{mm.title}}</font></td>
     {% endif %}
     {% endfor %}
   </tr>
   <tr>
-    {% for mm in object_list %}
+    {% for mm in movies %}
     {% if mm.title == 'The Rise of Darkrai' or mm.title == 'Giratina and the Sky Warrior' or mm.title == 'Arceus and the Jewel of Life'%}
     <td align="center" class="zoom"><a href="{% url 'pokemons:movie_id' mm.pk %}">
       <img src="{{mm.image}}" class='img'></a></td>
@@ -62,14 +69,14 @@
     {% endfor %}
   </tr>
   <tr>
-    {% for mm in object_list %}
+    {% for mm in movies %}
     {% if mm.title == 'The Rise of Darkrai' or mm.title == 'Giratina and the Sky Warrior' or mm.title == 'Arceus and the Jewel of Life'%}
     <td align="center" class="dist"><font size='4'>{{mm.title}}</font></td>
     {% endif %}
     {% endfor %}
   </tr>
   <tr>
-    {% for mm in object_list %}
+    {% for mm in movies %}
     {% if mm.title == 'Zoroark - Master of Illusions' or mm.title == 'White - Victini and Zekrom / Black - Victini and Reshiram' or mm.title == 'Kyurem VS the Sword of Justice'%}
     <td align="center" class="zoom"><a href="{% url 'pokemons:movie_id' mm.pk %}">
       <img src="{{mm.image}}" class='img'></a></td>
@@ -77,7 +84,7 @@
     {% endfor %}
   </tr>
   <tr>
-    {% for mm in object_list %}
+    {% for mm in movies %}
     {% if mm.title == 'Zoroark - Master of Illusions' or mm.title == 'White - Victini and Zekrom / Black - Victini and Reshiram' or mm.title == 'Kyurem VS the Sword of Justice'%}
     <td align="center" class="dist"><font size='4'>{{mm.title}}</font></td>
     {% endif %}

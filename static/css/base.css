@@ -2,8 +2,7 @@
     text-align: center;
     height: 100px;
     font-size: 60px;
-    background-color: gold;
-    background-image: linear-gradient(rgb(255, 123, 123), white, white);
+    background-image: linear-gradient(rgb(247, 156, 156), rgb(250, 166, 166), rgb(245, 179, 179));
 }
 
 .grid-container {
@@ -44,6 +43,9 @@
     list-style:none;
     font-size: 20px;
     text-align:center;
+    background-color: #f2f2f2;
+    /* background-image: linear-gradient(rgb(255, 191, 191), rgb(255, 191, 191), rgb(255, 191, 191)); */
+
 }
 
 .topnav li{

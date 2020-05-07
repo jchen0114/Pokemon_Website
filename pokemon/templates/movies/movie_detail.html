@@ -6,47 +6,54 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/movie_detail.css' %}">
 </head>
 <body>
-<h1 class='subtitle'>{{movie.title}}</h1>
-<hr class='bound'>
+  {% if pokemon_name %}
+    {% include 'pokemon/search_snippet.html' with pokemon_name=pokemon_name query=query %}
+  {% else %}
+    {% if query %}
+      {% include 'pokemon/search_snippet.html' with query=query %}
+    {% endif %}
+  {% endif %}
+  <h1 class='subtitle'>{{movie.title}}</h1>
+  <hr class='bound'>
 
-<p><a onClick="javascript:history.go(-1)" class='leftmargin'>Movie</a> &#8594; {{movie.title}}</p>
+  <p><a onClick="javascript:history.go(-1)" class='leftmargin'>Movie</a> &#8594; {{movie.title}}</p>
 
-<table class='tmp'>
-  <tr>
-    <th>
-      <table>
-        <tr>
-          <th>
-            <img src={{movie.image}} class='img'>
-          </th>
-        </tr>
-        <tr>
-          <td class='date'>
-            Release Date</br>
-            {{movie.release}}
-          </td>
-        </tr>
-      </table>
-    </th>
-  </tr>
-</table>
+  <table class='tmp'>
+    <tr>
+      <th>
+        <table>
+          <tr>
+            <th>
+              <img src={{movie.image}} class='img'>
+            </th>
+          </tr>
+          <tr>
+            <td class='date'>
+              Release Date</br>
+              {{movie.release}}
+            </td>
+          </tr>
+        </table>
+      </th>
+    </tr>
+  </table>
 
-<h2 class='change'>Summary</h2>
-<p class='leftmargin'>{{movie.summary}}</p>
+  <h2 class='change'>Summary</h2>
+  <p class='leftmargin'>{{movie.summary}}</p>
 
-<h2 class='dist'> Featured Pokémon </h2>
-<table class='leftmargin'>
-  <tr>
-    {% for mm in movie.pokemon.all %}
-      <td><a href="{% url 'pokemons:pokemon_id' mm.pk %}"><img src={{mm.image}} width="200" height="230" class='pkimg'></a></td>
-    {% endfor %}
-  </tr>
-  <tr>
-    {% for mm in movie.pokemon.all %}
-      <td align="center"><font size='5'>{{mm.pokemon_name}}</font></td>
-    {% endfor %}
-  </tr>
-</table>
+  <h2 class='dist'> Featured Pokémon </h2>
+  <table class='leftmargin'>
+    <tr>
+      {% for mm in movie.pokemon.all %}
+        <td><a href="{% url 'pokemons:pokemon_id' mm.pk %}"><img src={{mm.image}} width="200" height="230" class='pkimg'></a></td>
+      {% endfor %}
+    </tr>
+    <tr>
+      {% for mm in movie.pokemon.all %}
+        <td align="center"><font size='5'>{{mm.pokemon_name}}</font></td>
+      {% endfor %}
+    </tr>
+  </table>
 
 
 

@@ -9,6 +9,14 @@
 
 </head>
 <body>
+{% if pokemon_name %}
+  {% include 'pokemon/search_snippet.html' with pokemon_name=pokemon_name query=query %}
+{% else %}
+  {% if query %}
+    {% include 'pokemon/search_snippet.html' with query=query %}
+  {% endif %}
+{% endif %}
+
 <h1 class='nametitle'> {{pokemon.pokemon_name}} </h1>
 <hr class='bound'>
 

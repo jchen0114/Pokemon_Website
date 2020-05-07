@@ -13,17 +13,25 @@
         margin-top: 300px;
     }
 </style>
+{% if pokemon_name %}
+  {% include 'pokemon/search_snippet.html' with pokemon_name=pokemon_name query=query %}
+{% else %}
+  {% if query %}
+    {% include 'pokemon/search_snippet.html' with query=query %}
+  {% endif %}
+{% endif %}
+
 <div class="container center">
 	<div class="row">
 		<!-- Blog Post -->
 		<div class="card m-auto">
 			<img class="card-img-top" src="{{ blog.image }}">
 			<div class="card-body mt-2 mb-2">
-			  <h2 class="card-title">{{blog.title}}</h2>
-			  <p class="card-text">{{blog.body|safe}}</p>
+			  <h2 class="card-title">{{ blog.title }}</h2>
+			  <p class="card-text">{{ blog.body|safe }}</p>
 			</div>
 			<div class="card-footer text-muted">
-			  Updated on {{blog.date_updated}}
+			  Updated on {{ blog.date_updated }}
 			</div>
 		</div>
 	</div>

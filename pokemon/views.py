@@ -18,7 +18,8 @@ def pokemon_create_view(request):
     return render(request, "pokemon/pokemon_create.html", context=context)
 
 from django.shortcuts import get_object_or_404
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.views.generic import (ListView, DetailView, CreateView, 
+                                    UpdateView, TemplateView)
 from .filters import PokemonFilter
 
 class SearchListView(ListView):
@@ -40,11 +41,41 @@ class PokemonListView(ListView):
         li = ['658','448','778','6','197','700','445','384','282','94','887','248','1','849','249']
         for i in li:
             top.append(get_object_or_404(Pokemon, number=i))
+        print(top)
         return top
     
+    def get(self, request):
+        context = {}
+        query = ''
+        top = []
+        li = ['658','448','778','6','197','700','445','384','282','94','887','248','1','849','249']
+        for i in li:
+            top.append(get_object_or_404(Pokemon, number=i))
+
+        context['pokemon'] = top
+        if request.GET:
+            query = request.GET.get('q','')
+            context['query'] = str(query)
+            pokemon_name = sorted(get_pokemon_queryset(query), key=attrgetter('number'))
+            context['pokemon_name'] = pokemon_name
+        return render(request, self.template_name, context)
+
+
 class PokemonDetailView(DetailView):
     model = Pokemon
     template_name = 'pokemon/pokemon_detail.html'
+
+    def get(self, request, pk):
+        context = {}
+        query = ''
+
+        if request.GET:
+            query = request.GET.get('q','')
+            context['query'] = str(query)
+            pokemon_name = sorted(get_pokemon_queryset(query), key=attrgetter('number'))
+            context['pokemon_name'] = pokemon_name
+        context['pokemon'] = Pokemon.objects.all()[pk-1]
+        return render(request, self.template_name, context)
 
 class PokemonCreateView(CreateView):
     form_class = PokemonModelForm
@@ -57,43 +88,40 @@ class PokemonUpdateView(UpdateView):
 
 class MovieListView(ListView):
     model = Movie
+    # queryset = Movie.objects.all()
     template_name = 'movies/movie_list.html'
+    
+    def get(self, request):
+        context = {}
+        query = ''
+        if request.GET:
+            query = request.GET.get('q','')
+            context['query'] = str(query)
+            pokemon_name = sorted(get_pokemon_queryset(query), key=attrgetter('number'))
+            context['pokemon_name'] = pokemon_name
+        context['movies'] = Movie.objects.all()
+        print(context)
+        return render(request, self.template_name, context)
 
 class MovieDetailView(DetailView):
     model = Movie
     template_name = 'movies/movie_detail.html'
 
+    def get(self, request, pk):
+        context = {}
+        query = ''
+
+        if request.GET:
+            query = request.GET.get('q','')
+            context['query'] = str(query)
+            pokemon_name = sorted(get_pokemon_queryset(query), key=attrgetter('number'))
+            context['pokemon_name'] = pokemon_name
+        context['movie'] = Movie.objects.all()[pk-1]
+        return render(request, self.template_name, context)
+
 class TypeListView(ListView):
-    model = Type
+    # model = Type
     template_name = 'pokemon/typechart.html'
-
-class TestFilterView(ListView):
-    model = Pokemon
-    template_name = 'test.html'
-
-class BlogPostView(ListView):
-    model = BlogPost
-    template_name = 'blog/blog.html'
-    context_object_name = 'blog_list'
- 
-class BlogPostDetailView(DetailView):
-    model = BlogPost
-    template_name = 'blog/blog_detail.html'
-    context_object_name = 'blog'
-
-
-from django.db.models import Q
-from operator import attrgetter
-
-class HomeView(ListView):
-    model = Pokemon
-    template_name = 'home.html'
-
-    def get_context_data(self, **kwargs):
-        ctx = super(HomeView, self).get_context_data(**kwargs)
-        ctx['blogs'] = BlogPost.objects.all()
-        
-        return ctx
 
     def get(self, request):
         context = {}
@@ -103,7 +131,56 @@ class HomeView(ListView):
             context['query'] = str(query)
             pokemon_name = sorted(get_pokemon_queryset(query), key=attrgetter('number'))
             context['pokemon_name'] = pokemon_name
-        return render(request, "home.html", context)
+        # context['types'] = Type.objects.all()
+
+        return render(request, self.template_name, context)
+
+
+class BlogPostView(ListView):
+    model = BlogPost
+    template_name = 'blog/blog.html'
+    context_object_name = 'blog_list'
+ 
+class BlogPostDetailView(DetailView):
+    template_name = 'blog/blog_detail.html'
+
+    def get(self, request, pk):
+        context = {}
+        query = ''
+
+        if request.GET:
+            query = request.GET.get('q','')
+            context['query'] = str(query)
+            pokemon_name = sorted(get_pokemon_queryset(query), key=attrgetter('number'))
+            context['pokemon_name'] = pokemon_name
+        context['blog'] = BlogPost.objects.all()[pk-1]
+        return render(request, self.template_name, context)
+        
+
+
+from django.db.models import Q
+from operator import attrgetter
+
+# class HomeView(ListView):
+#     model = Pokemon
+#     template_name = 'home.html'
+
+#     def get(self, request):
+#         context = {}
+#         query = ''
+#         if request.GET:
+#             query = request.GET.get('q','')
+#             context['query'] = str(query)
+#             pokemon_name = sorted(get_pokemon_queryset(query), key=attrgetter('number'))
+#             context['pokemon_name'] = pokemon_name
+
+#         return render(request, self.template_name, context)
+
+#     def get_context_data(self, **kwargs):
+#         context = super(HomeView, self).get_context_data(**kwargs)
+#         context['blogs'] = BlogPost.objects.all()
+        
+#         return context
 
 
 def home_screen_view(request):
