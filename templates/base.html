@@ -3,32 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="https://drive.google.com/uc?id=1jJ6bW1RThUfvntJYey3a8wePF1FEXYKq">
   
-  {% include 'header.html' %}
-  {% include 'base_css.html' %}
   {% load static %}
   <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
 </head>
 <body>
-  <header class='head'>
-    <div class='grid-container'>
-      <a>Pokémon</a>
-    </div>
-  </header>
-  <div>
-    <nav class="topnav">
-      <a class='text' href="{% url 'home' %}">Home</a>
-      <a class='text' href="{% url 'pokemons:movie' %}">Movies</a>
-      <a class='text' href="{% url 'pokemons:pokemon' %}">2019 Top Pokémons</a>
-      <a class='text' href="{% url 'pokemons:type' %}">Type Chart</a>
-      <a class='text' href="{% url 'pokemons:search' %}">Advance Search</a>
-      <a class="search-bar">
-        <form method="get">
-          <input class="form-control" type="text" name="q" id="id_q" placeholder="Search...">
-        </form>
-      </a>
-    </nav>
-  </div>
+  {% include 'header.html' %}
+  {% include 'base_css.html' %}
+
   
   {% block content %}
   {% endblock %}
@@ -36,7 +19,4 @@
   {% include 'footer.html' %}
   
 </body>
-<script type="text/javascript">
-	document.getElementById("id_q").value = "{{query}}"
-</script>
 </html>

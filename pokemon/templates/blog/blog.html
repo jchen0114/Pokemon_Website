@@ -20,9 +20,10 @@
                     <a href="{% url 'pokemons:blog_id' blog.pk %}">
                         <h2 class="card-title">{{blog.title}}</h2>
                     </a>
-                    <p class="card-text">{{blog.body|safe|truncatechars:200}}</p>
+                    <p class="card-text">{{blog.body|safe|truncatechars:250}}</p>
                 </div>
-                <div class="card-footer text-muted">
+                <div class="card-footer">
+                    <!-- text-muted -->
                     <p>Featured Pokemon(s):
                         {% for p in blog.pokemon.all %}
                             <a href="{% url 'pokemons:pokemon_id' p.pk %}">{{ p }}</a>

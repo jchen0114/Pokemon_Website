@@ -25,13 +25,18 @@ table {
     color: black;
     cursor: pointer;
     padding: 18px;
-    width: 100%;
+    width: 30%;
     height: auto;
     border: none;
     text-align: center;
-    font-size: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
 }
 
+.collapsible:hover {
+    text-decoration: underline solid black;
+}
   
 .content {
     padding: 20px;

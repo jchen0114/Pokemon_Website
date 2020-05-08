@@ -13,7 +13,7 @@
 <div class="search-size container">
   <form method="GET">
     {{ filter.form.pokemon_name | bootstrap}}
-    <h2 class="collapsible" onclick="change('Advance Search', 'collapse')">Advance Search</h2>
+    <p class="collapsible" id="change" onclick="swaptext()">Advance Search</p>
       <div class="content">
         {{ filter.form.number | bootstrap}}
         {{ filter.form.types | bootstrap}}
@@ -83,6 +83,15 @@
   function change(name, x) {
     document.getElementById(name).innerHTML = x;
   }
+
+  function swaptext() {
+  var x = document.getElementById("change");
+  if (x.innerHTML === "Advance Search") {
+    x.innerHTML = "Collapse Search";
+  } else {
+    x.innerHTML = "Advance Search";
+  }
+}
 </script>
 </body>
 {% endblock content %}

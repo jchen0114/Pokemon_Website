@@ -1,46 +1,22 @@
 .head {
-    text-align: center;
-    height: 100px;
-    font-size: 60px;
+    height: 80px;
+    font-weight: bold;
     background-image: linear-gradient(rgb(247, 156, 156), rgb(250, 166, 166), rgb(245, 179, 179));
-}
-
-.grid-container {
-    margin: 0 auto;
-    max-width: 1220px;
 }
 
 .topnav {
     color: black;
-    padding: 0.5cm 0 0.5cm 0;
-    border-bottom: 1px solid rgb(199, 199, 199);
-    margin: 0 15% 0 15%;
-    border-width:1px 0;
-    font-size: 20px;
-    text-align:center;
-    background-color: #f2f2f2;
-    /* background-image: linear-gradient(rgb(255, 191, 191), rgb(255, 191, 191), rgb(255, 191, 191)); */
-
+    font-size: 15px;
+    background-color: transparent;
 }
 
-.topnav li{
-    display:inline;
-}
 .topnav a {
-    display:inline-block;
-    margin: 0 2px 0 2px;
-    padding:10px 5px 10px 5px;
-    text-decoration: none;
+    padding: 0 5px 0 5px;
 }
   
-.topnav a.text:hover {
-    background-color: gold;
-    color: black;
-}
-
-.topnav a:link {color: black;}
-.topnav a:visited {color: black;}
-.topnav a:active {color: black;}
+a:link {color: black;}
+a:visited {color: black;}
+a:active {color: black;}
 
 .bottompage {
     margin: 0 15% 0 15%;
@@ -52,10 +28,24 @@
     height: 30px;
 }
 
-.spacing {
-    margin: 50px 5px 0 5px;
-}
+.spacing {margin: 50px 5px 0 5px;}
 
-form {
-    width: 100%;
-}
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: rgb(252, 140, 140);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+  }
+  
+  #myBtn:hover {
+    background-color: rgb(48, 48, 48);
+  }
