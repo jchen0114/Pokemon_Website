@@ -16,7 +16,7 @@
   <h1 class='subtitle'>{{movie.title}}</h1>
   <hr class='bound'>
 
-  <p><a onClick="javascript:history.go(-1)" class='leftmargin'>Movie</a> &#8594; {{movie.title}}</p>
+  <p><a onClick="javascript:history.go(-1)" class='flow'>Movie</a> &#8594; {{movie.title}}</p>
 
   <table class='tmp'>
     <tr>
@@ -55,7 +55,14 @@
     </tr>
   </table>
 
+  <button class='btn btn-primary btn-loc
+  ' onclick="goBack()">Back</button>
 
+  <script>
+      function goBack() {
+          window.history.back();
+        }
+  </script>
 
 <!-- <input type="button" value="Return to previous page" onClick="javascript:history.go(-1)" /> -->
 </body>

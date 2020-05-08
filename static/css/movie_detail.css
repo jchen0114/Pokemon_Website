@@ -46,7 +46,6 @@
 
 .tmp {
     float: right;
-    display: inline;
     margin: 0 5% auto auto;
     border-collapse: separate;
     border-spacing: 15px;
@@ -55,3 +54,11 @@
 body {
     padding-bottom: 100px;
 }
+
+.btn-loc {
+    margin-left: 10%;
+    margin-top: 50px;
+}
+
+.flow {margin: 100px 0 0 10%;}
+.flow:hover {text-decoration: underline;}
