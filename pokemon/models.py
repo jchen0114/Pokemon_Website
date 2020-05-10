@@ -57,6 +57,7 @@ class Blog(models.Model):
     body = models.TextField(max_length=5000, null=False, blank=False)
     image = models.CharField(max_length=100, null=True, blank=True)
     pokemon = models.ManyToManyField(Pokemon)
+    homepage_script = models.CharField(max_length=50, null=True, blank=True)
 
     def __str__(self):
         return self.title

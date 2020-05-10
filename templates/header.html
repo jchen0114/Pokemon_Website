@@ -47,10 +47,11 @@
             <img class="dropbtn" src="https://drive.google.com/uc?id=1nWCqzH6tj7PLc25u8xmH6GyRb6BCbJ0V" alt="menu">
             <div class="dropdown-content">
                 <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'pokemons:blog' %}">Blogs</a>
                 <a href="{% url 'pokemons:movie' %}">Movies</a>
                 <a href="{% url 'pokemons:pokemon' %}">Top Pokémons</a>
                 <a href="{% url 'pokemons:type' %}">Type Chart</a>
-                <a href="{% url 'pokemons:search' %}">Advance Search</a>
+                <a href="{% url 'pokemons:search' %}">Search More</a>
             </div>
         </div>
         <h2 class="my-0 mr-md-auto">
@@ -61,13 +62,6 @@
                 <input class="form-control"  type="text" name="q" id="id_q" placeholder="Search...">
             </form>
         </div>
-        <!-- <nav class="topnav my-2 my-md-0 mr-md-3">
-            <a href="{% url 'home' %}">Home</a>
-            <a href="{% url 'pokemons:movie' %}">Movies</a>
-            <a href="{% url 'pokemons:pokemon' %}">Top Pokémons</a>
-            <a href="{% url 'pokemons:type' %}">Type Chart</a>
-            <a href="{% url 'pokemons:search' %}">Advance Search</a>
-        </nav> -->
     </div>
 </header>
 

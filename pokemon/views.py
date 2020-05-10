@@ -134,12 +134,10 @@ class TypeListView(ListView):
         return render(request, self.template_name, context)
 
 
-class BlogView(ListView):
-    model = Blog
-    template_name = 'blog/blog.html'
-    context_object_name = 'blog_list'
+class BlogListView(ListView):
+    queryset = Blog.objects.all().order_by('-id')
+    template_name = 'blog/blog_list.html'
 
- 
 class BlogDetailView(DetailView):
     template_name = 'blog/blog_detail.html'
 
@@ -156,10 +154,8 @@ class BlogDetailView(DetailView):
         return render(request, self.template_name, context)
         
 
-
 from django.db.models import Q
 from operator import attrgetter
-
 # class HomeView(ListView):
 #     model = Pokemon
 #     template_name = 'home.html'
@@ -192,7 +188,7 @@ def home_screen_view(request):
         pokemon_name = sorted(get_pokemon_queryset(query), key=attrgetter('number'))
         context['pokemon_name'] = pokemon_name
     
-    context['blogs'] = Blog.objects.all().order_by('-id')
+    context['blogs'] = Blog.objects.all().order_by('id')
 
     return render(request, "home.html", context)
 
@@ -214,3 +210,6 @@ def get_pokemon_queryset(query=None):
 
     return list(set(queryset))
 
+class IntroView(ListView):
+    model = Blog
+    template_name = 'pre-home.html'

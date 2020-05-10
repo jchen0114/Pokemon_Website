@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+{% block content %}
 {% load static %}
 <style type="text/css">
 	.card{
@@ -11,7 +13,8 @@
         padding: 10px 0 0 20px;
     }
 </style>
-{% for blog in blogs %}
+<br/>
+{% for blog in blog_list %}
     <div class="container">
         <div class="row">
             <!-- Blog Post -->
@@ -40,3 +43,4 @@
     </div>
     <br>
 {% endfor %}
+{% endblock content %}

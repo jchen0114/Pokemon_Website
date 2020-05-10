@@ -27,6 +27,7 @@ urlpatterns = [
     path('pokemon/', include('pokemon.urls', namespace='s-pokemons')),
     path('', views.home_screen_view, name='home'),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('intro', views.IntroView.as_view(), name='intro'),
     # path('register/', register, name='register'),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
